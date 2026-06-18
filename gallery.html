@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery Exhibition | Aura 3D - Luxury Custom Crystals</title>
+  <meta name="description"
+    content="View beautiful real photos of completed 3D laser engraving wedding keepsakes, corporate trophies, pet memorials, and interactive before-and-after designs.">
+  <!-- Tailwind CSS 3 CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            luxuryBlack: '#0D0D0D',
+            luxuryCharcoal: '#1A1A1A',
+            luxuryCharcoalLight: '#262626',
+            luxuryGold: '#D4AF37',
+            luxuryGoldLight: '#E5C483',
+            luxuryBeige: '#F5F2EB',
+            luxuryBeigeDark: '#EAE6DF',
+            luxuryLavender: '#E6E6FA',
+            luxuryPurple: '#4B0082',
+            luxuryPurpleDark: '#2D1E3D',
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body
+  class="bg-luxuryBeige text-luxuryCharcoal dark:bg-luxuryBlack dark:text-gray-100 transition-colors duration-500 pt-24 overflow-x-hidden">
+
+  <!-- ==========================================
+       NAVBAR (Identical on all pages)
+       ========================================== -->
+  <nav id="navbar"
+    class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-4 px-6 md:px-12 flex items-center justify-between">
+    <!-- Logo -->
+    <a href="index.html" class="flex items-center space-x-2 text-xl font-bold tracking-widest text-luxuryGold">
+      <svg class="h-6 w-6 text-luxuryGold rtl-flip" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        stroke-width="2">
+        <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5" />
+        <polyline points="12 2 12 22" />
+        <polyline points="12 12 22 8.5" />
+        <polyline points="12 12 2 8.5" />
+      </svg>
+      <span>AURA 3D</span>
+    </a>
+
+    <!-- Desktop Navigation Items (Centered) -->
+    <div class="hidden xl:flex items-center space-x-6">
+      <a href="index.html" class="nav-link text-sm font-semibold tracking-wider hover:text-luxuryGold transition">Home
+        1</a>
+      <a href="home2.html" class="nav-link text-sm font-semibold tracking-wider hover:text-luxuryGold transition">Home
+        2</a>
+      <a href="about.html"
+        class="nav-link text-sm font-semibold tracking-wider hover:text-luxuryGold transition">About</a>
+      <a href="custom.html"
+        class="nav-link text-sm font-semibold tracking-wider hover:text-luxuryGold transition">Custom Orders</a>
+      <a href="gallery.html"
+        class="nav-link text-sm font-semibold tracking-wider hover:text-luxuryGold transition">Gallery</a>
+      <a href="blog.html"
+        class="nav-link text-sm font-semibold tracking-wider hover:text-luxuryGold transition">Blog</a>
+      <a href="contact.html"
+        class="nav-link text-sm font-semibold tracking-wider hover:text-luxuryGold transition">Contact</a>
+    </div>
+
+    <!-- Desktop Controls (Right-aligned) -->
+    <div class="hidden xl:flex items-center space-x-6">
+      <!-- Theme Toggle -->
+      <button
+        class="theme-toggle flex items-center justify-center h-9 w-9 rounded border border-luxuryGold/30 text-luxuryGold hover:border-luxuryGold hover:bg-luxuryGold/10 transition"
+        aria-label="Toggle Theme">
+        <span class="theme-icon"></span>
+      </button>
+
+      <!-- RTL Toggle -->
+      <button
+        class="rtl-toggle flex items-center justify-center h-9 px-3 text-xs rounded border border-luxuryGold/30 text-luxuryGold font-mono hover:border-luxuryGold hover:bg-luxuryGold/10 transition"
+        aria-label="Toggle RTL">
+        <span class="rtl-label">RTL</span>
+      </button>
+
+      <a href="signup.html"
+        class="flex items-center justify-center h-9 px-4 rounded border border-luxuryGold text-luxuryGold text-sm font-semibold tracking-wider hover:bg-luxuryGold hover:text-luxuryCharcoal transition duration-300">Signup</a>
+    </div>
+
+    <!-- Mobile Hamburger -->
+    <div class="xl:hidden flex items-center space-x-4">
+      <!-- Theme Toggle Mobile -->
+      <button
+        class="theme-toggle flex items-center justify-center h-8 w-8 rounded border border-luxuryGold/30 text-luxuryGold hover:border-luxuryGold hover:bg-luxuryGold/10 transition"
+        aria-label="Toggle Theme">
+        <span class="theme-icon"></span>
+      </button>
+
+      <!-- RTL Toggle Mobile -->
+      <button
+        class="rtl-toggle flex items-center justify-center h-8 px-2.5 text-[10px] rounded border border-luxuryGold/30 text-luxuryGold font-mono hover:border-luxuryGold hover:bg-luxuryGold/10 transition"
+        aria-label="Toggle RTL">
+        <span class="rtl-label">RTL</span>
+      </button>
+
+      <button id="mobile-menu-btn"  class="text-luxuryGold focus:outline-none" aria-label="Toggle Mobile Menu">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu Drawer -->
+    <div id="mobile-menu"
+      class="hidden absolute top-full left-0 w-full bg-luxuryBlack/95 dark:bg-luxuryBlack/98 border-b border-luxuryGold/10 p-6 flex flex-col space-y-4 xl:hidden shadow-xl z-50">
+      <a href="index.html"
+        class="nav-link text-base font-semibold tracking-wider text-gray-300 hover:text-luxuryGold transition py-2 border-b border-white/5">Home
+        1</a>
+      <a href="home2.html"
+        class="nav-link text-base font-semibold tracking-wider text-gray-300 hover:text-luxuryGold transition py-2 border-b border-white/5">Home
+        2</a>
+      <a href="about.html"
+        class="nav-link text-base font-semibold tracking-wider text-gray-300 hover:text-luxuryGold transition py-2 border-b border-white/5">About</a>
+      <a href="custom.html"
+        class="nav-link text-base font-semibold tracking-wider text-gray-300 hover:text-luxuryGold transition py-2 border-b border-white/5">Custom
+        Orders</a>
+      <a href="gallery.html"
+        class="nav-link text-base font-semibold tracking-wider text-gray-300 hover:text-luxuryGold transition py-2 border-b border-white/5">Gallery</a>
+      <a href="blog.html"
+        class="nav-link text-base font-semibold tracking-wider text-gray-300 hover:text-luxuryGold transition py-2 border-b border-white/5">Blog</a>
+      <a href="contact.html"
+        class="nav-link text-base font-semibold tracking-wider text-gray-300 hover:text-luxuryGold transition py-2 border-b border-white/5">Contact</a>
+      <a href="signup.html"
+        class="inline-block text-center px-4 py-2 rounded bg-luxuryGold text-luxuryCharcoal text-base font-semibold tracking-wider hover:bg-luxuryGoldLight transition">Signup</a>
+    </div>
+  </nav>
+
+  <!-- ==========================================
+       HERO SECTION
+       ========================================== -->
+  <header
+    class="relative min-h-[50vh] flex items-center justify-center py-20 px-6 md:px-12 bg-cover bg-center text-white"
+    style="background-image: url('assets/images/hero_gallery.png');">
+    <div class="absolute inset-0 bg-luxuryBlack/85"></div>
+    <div class="relative max-w-4xl w-full text-center flex flex-col items-center space-y-4 z-10">
+      <span class="text-xs md:text-sm font-semibold tracking-[0.2em] text-luxuryGold uppercase">Premium Showcase</span>
+      <h1 class="text-[48px] md:text-[64px] leading-tight font-extrabold tracking-tight max-w-[600px] font-serif">
+        The Exhibition <span class="text-gold-gradient">Gallery</span>
+      </h1>
+      <p class="text-[16px] text-gray-300 max-w-[480px]">
+        Explore the finished elegance of custom laser commissions in optical crystal.
+      </p>
+    </div>
+  </header>
+
+  <!-- ==========================================
+       INTERACTIVE BEFORE / AFTER IMAGE COMPARISON
+       ========================================== -->
+  <section class="py-24 px-6 md:px-12 bg-white dark:bg-luxuryCharcoal text-luxuryCharcoal dark:text-gray-100">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+      <!-- Copy column -->
+      <div class="flex flex-col space-y-6">
+        <span class="text-xs font-semibold tracking-[0.2em] text-luxuryGold uppercase font-serif">2D Photo to 3D
+          Crystal</span>
+        <h2 class="text-[36px] md:text-[48px] leading-tight font-extrabold tracking-tight max-w-[600px]">
+          Interactive Before & After
+        </h2>
+        <p class="text-[16px] text-gray-500 dark:text-gray-400 max-w-[480px] leading-relaxed">
+          Slide the handle on the crystal image to witness how a standard 2D flat digital portrait (left) is converted
+          into a detailed volumetric 3D laser-engraved glass sculpture (right).
+        </p>
+        <p class="text-[16px] text-gray-500 dark:text-gray-400 max-w-[480px] leading-relaxed">
+          Our artists carefully isolate the subjects, map facial contour depths, and align key highlight coordinates for
+          optimal internal reflectivity.
+        </p>
+      </div>
+
+      <!-- Interactive Slider Block -->
+      <div
+        class="relative w-full max-w-[500px] mx-auto select-none border border-luxuryGold/30 rounded-2xl overflow-hidden shadow-2xl">
+        <div class="slider-container h-[450px]">
+          <!-- Before (2D photo) -->
+          <img src="assets/images/hero_signup.png" alt="2D Portrait input mockup reference" class="after-img">
+
+          <!-- After (Finished 3D Crystal engraving) -->
+          <div class="resize-container">
+            <img src="assets/images/hero_home1.png" alt="3D Crystal Engraved output result" class="before-img">
+          </div>
+
+          <!-- Handle -->
+          <div class="slider-handle"></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
+       LUXURY PRODUCT GALLERY (Masonry-Style)
+       ========================================== -->
+  <section class="py-24 px-6 md:px-12 bg-luxuryBeigeDark dark:bg-luxuryBlack text-luxuryCharcoal dark:text-gray-100">
+    <div class="max-w-7xl mx-auto flex flex-col items-center">
+      <div class="text-center mb-16 flex flex-col items-center">
+        <span class="text-xs font-semibold tracking-[0.2em] text-luxuryGold uppercase">Portfolio Curations</span>
+        <h2 class="text-[36px] md:text-[48px] leading-tight font-extrabold tracking-tight mt-2 mb-4 max-w-[600px]">
+          Luxury Product Gallery
+        </h2>
+        <p class="text-[16px] text-gray-500 dark:text-gray-400 max-w-[480px]">
+          Click on any creation below to open in full screen HD lightbox detail view.
+        </p>
+      </div>
+
+      <!-- Masonry Grid -->
+      <div class="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8 w-full scroll-animate">
+
+        <!-- Wedding Gift Item -->
+        <div
+          class="break-inside-avoid glass-card rounded-2xl overflow-hidden border border-luxuryGold/10 relative group">
+          <img src="https://images.pexels.com/photos/34372552/pexels-photo-34372552.jpeg"
+            alt="Wedding Anniversary Heart Crystal" class="w-full h-auto object-cover" data-lightbox
+            data-lightbox-caption="Wedding Heart Crystal - 3D portrait details">
+          <div class="p-6">
+            <h3 class="text-lg font-serif mb-1">Wedding Anniversary Heart</h3>
+            <p class="text-xs text-gray-400">Occasion: Golden 50th Wedding Anniversary</p>
+            <p class="text-xs italic text-luxuryGold/90 mt-3 font-serif border-t border-luxuryGold/10 pt-2">Engraving: "Always & Forever"</p>
+          </div>
+        </div>
+
+        <!-- Corporate Gift Item -->
+        <div
+          class="break-inside-avoid glass-card rounded-2xl overflow-hidden border border-luxuryGold/10 relative group">
+          <img src="https://images.pexels.com/photos/15113134/pexels-photo-15113134.jpeg"
+            alt="Corporate Trophies & Awards Collection" class="w-full h-auto object-cover" data-lightbox
+            data-lightbox-caption="Executive Leadership awards - custom towers">
+          <div class="p-6">
+            <h3 class="text-lg font-serif mb-1">Corporate Prestige Awards</h3>
+            <p class="text-xs text-gray-400">Occasion: Leadership Circle Awards</p>
+            <p class="text-xs italic text-luxuryGold/90 mt-3 font-serif border-t border-luxuryGold/10 pt-2">Engraving: "Excellence in Leadership & Vision"</p>
+          </div>
+        </div>
+
+        <!-- Portrait Crystal Item -->
+        <div
+          class="break-inside-avoid glass-card rounded-2xl overflow-hidden border border-luxuryGold/10 relative group">
+          <img src="https://images.pexels.com/photos/15291704/pexels-photo-15291704.jpeg"
+            alt="3D Crystal Portrait of a young couple" class="w-full h-auto object-cover" data-lightbox
+            data-lightbox-caption="3D Crystal Block Portrait">
+          <div class="p-6">
+            <h3 class="text-lg font-serif mb-1">Classic Couple Portrait</h3>
+            <p class="text-xs text-gray-400">Occasion: Engagement Keepsake Block</p>
+            <p class="text-xs italic text-luxuryGold/90 mt-3 font-serif border-t border-luxuryGold/10 pt-2">Engraving: "Together is our favorite place to be"</p>
+          </div>
+        </div>
+
+        <!-- Memorial Piece Item -->
+        <div
+          class="break-inside-avoid glass-card rounded-2xl overflow-hidden border border-luxuryGold/10 relative group">
+          <img src="https://images.pexels.com/photos/6976855/pexels-photo-6976855.jpeg"
+            alt="Pet Memorial crystal block display" class="w-full h-auto object-cover" data-lightbox
+            data-lightbox-caption="Pet Memorial Keepsake Block">
+          <div class="p-6">
+            <h3 class="text-lg font-serif mb-1">Pet Memorial Keepsake</h3>
+            <p class="text-xs text-gray-400">Occasion: Golden Retriever Remembrance</p>
+            <p class="text-xs italic text-luxuryGold/90 mt-3 font-serif border-t border-luxuryGold/10 pt-2">Engraving: "You left pawprints on our hearts forever"</p>
+          </div>
+        </div>
+
+        <!-- Award Piece Item -->
+        <div
+          class="break-inside-avoid glass-card rounded-2xl overflow-hidden border border-luxuryGold/10 relative group">
+          <img src="https://images.pexels.com/photos/20293595/pexels-photo-20293595.jpeg"
+            alt="Geometric diamond facet trophy" class="w-full h-auto object-cover" data-lightbox
+            data-lightbox-caption="Diamond faceted crystal trophy design">
+          <div class="p-6">
+            <h3 class="text-lg font-serif mb-1">Geometric Facet Prism</h3>
+            <p class="text-xs text-gray-400">Occasion: Executive Retirement Award</p>
+            <p class="text-xs italic text-luxuryGold/90 mt-3 font-serif border-t border-luxuryGold/10 pt-2">Engraving: "Honoring a Legacy of Excellence"</p>
+          </div>
+        </div>
+
+        <!-- Portrait Piece Item 2 -->
+        <div
+          class="break-inside-avoid glass-card rounded-2xl overflow-hidden border border-luxuryGold/10 relative group">
+          <img src="https://images.pexels.com/photos/32334283/pexels-photo-32334283.jpeg"
+            alt="Custom name plate engraving" class="w-full h-auto object-cover" data-lightbox
+            data-lightbox-caption="Prestige Crystal Archway desk piece">
+          <div class="p-6">
+            <h3 class="text-lg font-serif mb-1">Prestige Archway Dome</h3>
+            <p class="text-xs text-gray-400">Occasion: Executive Office Desk Display</p>
+            <p class="text-xs italic text-luxuryGold/90 mt-3 font-serif border-t border-luxuryGold/10 pt-2">Engraving: "Dr. Adrian Thorne - Founder & Chairman"</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       ENGRAVING INSPIRATIONAL QUOTES SECTION
+       ========================================== -->
+  <section class="py-24 px-6 md:px-12 bg-white dark:bg-luxuryCharcoal text-luxuryCharcoal dark:text-gray-100 border-t border-luxuryGold/10">
+    <div class="max-w-7xl mx-auto flex flex-col items-center">
+      <div class="text-center mb-16 flex flex-col items-center">
+        <span class="text-xs font-semibold tracking-[0.2em] text-luxuryGold uppercase">Custom Inscriptions</span>
+        <h2 class="text-[36px] md:text-[48px] leading-tight font-extrabold tracking-tight mt-2 mb-4 max-w-[600px] text-center">
+          Inspirational Inscription Quotes
+        </h2>
+        <p class="text-[16px] text-gray-500 dark:text-gray-400 max-w-[550px] text-center">
+          Select and copy a beautiful message to engrave alongside your personalized 3D photo crystal.
+        </p>
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="flex flex-wrap justify-center gap-4 mb-12 w-full max-w-2xl">
+        <button class="quote-tab-btn px-6 py-2.5 rounded-full border text-sm font-semibold tracking-wider transition bg-luxuryGold text-luxuryCharcoal border-luxuryGold" data-category="love">
+          Love & Anniversary
+        </button>
+        <button class="quote-tab-btn px-6 py-2.5 rounded-full border border-luxuryGold/20 text-luxuryGold text-sm font-semibold tracking-wider transition hover:border-luxuryGold/60" data-category="family">
+          Family & Friends
+        </button>
+        <button class="quote-tab-btn px-6 py-2.5 rounded-full border border-luxuryGold/20 text-luxuryGold text-sm font-semibold tracking-wider transition hover:border-luxuryGold/60" data-category="memorial">
+          Memorials
+        </button>
+        <button class="quote-tab-btn px-6 py-2.5 rounded-full border border-luxuryGold/20 text-luxuryGold text-sm font-semibold tracking-wider transition hover:border-luxuryGold/60" data-category="milestone">
+          Milestones & Success
+        </button>
+      </div>
+
+      <!-- Quotes Display Panels -->
+      <div class="w-full">
+        <!-- Love & Anniversary Quotes -->
+        <div id="quote-cat-love" class="quote-tab-content grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          
+          <!-- Quote Card 1 -->
+          <div class="glass-card p-6 rounded-2xl border border-luxuryGold/10 flex flex-col justify-between h-[180px]">
+            <p class="quote-text text-sm italic font-serif text-gray-600 dark:text-gray-300 leading-relaxed">
+              "Together is my favorite place to be."
+            </p>
+            <div class="flex items-center justify-between border-t border-gray-200 dark:border-white/10 pt-3 mt-4">
+              <span class="text-[10px] text-gray-400 uppercase tracking-widest">Love</span>
+              <button class="copy-quote-btn text-xs text-luxuryGold hover:text-luxuryGoldLight font-semibold tracking-wide flex items-center space-x-1.5 focus:outline-none">
+                <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
+                </svg>
+                <span>Copy Quote</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Quote Card 2 -->
+          <div class="glass-card p-6 rounded-2xl border border-luxuryGold/10 flex flex-col justify-between h-[180px]">
+            <p class="quote-text text-sm italic font-serif text-gray-600 dark:text-gray-300 leading-relaxed">
+              "I have found the one whom my soul loves."
+            </p>
+            <div class="flex items-center justify-between border-t border-gray-200 dark:border-white/10 pt-3 mt-4">
+              <span class="text-[10px] text-gray-400 uppercase tracking-widest">Song of Solomon</span>
+              <button class="copy-quote-btn text-xs text-luxuryGold hover:text-luxuryGoldLight font-semibold tracking-wide flex items-center space-x-1.5 focus:outline-none">
+                <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
+                </svg>
+                <span>Copy Quote</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Quote Card 3 -->
+          <div class="glass-card p-6 rounded-2xl border border-luxuryGold/10 flex flex-col justify-between h-[180px]">
+            <p class="quote-text text-sm italic font-serif text-gray-600 dark:text-gray-300 leading-relaxed">
+              "Grow old along with me! The best is yet to be."
+            </p>
+            <div class="flex items-center justify-between border-t border-gray-200 dark:border-white/10 pt-3 mt-4">
+              <span class="text-[10px] text-gray-400 uppercase tracking-widest">Robert Browning</span>
+              <button class="copy-quote-btn text-xs text-luxuryGold hover:text-luxuryGoldLight font-semibold tracking-wide flex items-center space-x-1.5 focus:outline-none">
+                <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
+                </svg>
+                <span>Copy Quote</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Family & Friends Quotes -->
+        <div id="quote-cat-family" class="quote-tab-content hidden grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          
+          <!-- Quote Card 1 -->
+          <div class="glass-card p-6 rounded-2xl border border-luxuryGold/10 flex flex-col justify-between h-[180px]">
+            <p class="quote-text text-sm italic font-serif text-gray-600 dark:text-gray-300 leading-relaxed">
+              "Family: Where life begins and love never ends."
+            </p>
+            <div class="flex items-center justify-between border-t border-gray-200 dark:border-white/10 pt-3 mt-4">
+              <span class="text-[10px] text-gray-400 uppercase tracking-widest">Family</span>
+              <button class="copy-quote-btn text-xs text-luxuryGold hover:text-luxuryGoldLight font-semibold tracking-wide flex items-center space-x-1.5 focus:outline-none">
+                <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
+                </svg>
+                <span>Copy Quote</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Quote Card 2 -->
+          <div class="glass-card p-6 rounded-2xl border border-luxuryGold/10 flex flex-col justify-between h-[180px]">
+            <p class="quote-text text-sm italic font-serif text-gray-600 dark:text-gray-300 leading-relaxed">
+              "Side by side or miles apart, friends are always close at heart."
+            </p>
+            <div class="flex items-center justify-between border-t border-gray-200 dark:border-white/10 pt-3 mt-4">
+              <span class="text-[10px] text-gray-400 uppercase tracking-widest">Friendship</span>
+              <button class="copy-quote-btn text-xs text-luxuryGold hover:text-luxuryGoldLight font-semibold tracking-wide flex items-center space-x-1.5 focus:outline-none">
+                <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
+                </svg>
+                <span>Copy Quote</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Quote Card 3 -->
+          <div class="glass-card p-6 rounded-2xl border border-luxuryGold/10 flex flex-col justify-between h-[180px]">
+            <p class="quote-text text-sm italic font-serif text-gray-600 dark:text-gray-300 leading-relaxed">
+              "The love of a family is life's greatest blessing."
+            </p>
+            <div class="flex items-center justify-between border-t border-gray-200 dark:border-white/10 pt-3 mt-4">
+              <span class="text-[10px] text-gray-400 uppercase tracking-widest">Gratitude</span>
+              <button class="copy-quote-btn text-xs text-luxuryGold hover:text-luxuryGoldLight font-semibold tracking-wide flex items-center space-x-1.5 focus:outline-none">
+                <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
+                </svg>
+                <span>Copy Quote</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Memorial Quotes -->
+        <div id="quote-cat-memorial" class="quote-tab-content hidden grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          
+          <!-- Quote Card 1 -->
+          <div class="glass-card p-6 rounded-2xl border border-luxuryGold/10 flex flex-col justify-between h-[180px]">
+            <p class="quote-text text-sm italic font-serif text-gray-600 dark:text-gray-300 leading-relaxed">
+              "Those we love don't go away, they walk beside us every day."
+            </p>
+            <div class="flex items-center justify-between border-t border-gray-200 dark:border-white/10 pt-3 mt-4">
+              <span class="text-[10px] text-gray-400 uppercase tracking-widest">Remembrance</span>
+              <button class="copy-quote-btn text-xs text-luxuryGold hover:text-luxuryGoldLight font-semibold tracking-wide flex items-center space-x-1.5 focus:outline-none">
+                <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
+                </svg>
+                <span>Copy Quote</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Quote Card 2 -->
+          <div class="glass-card p-6 rounded-2xl border border-luxuryGold/10 flex flex-col justify-between h-[180px]">
+            <p class="quote-text text-sm italic font-serif text-gray-600 dark:text-gray-300 leading-relaxed">
+              "In loving memory of a life beautifully lived."
+            </p>
+            <div class="flex items-center justify-between border-t border-gray-200 dark:border-white/10 pt-3 mt-4">
+              <span class="text-[10px] text-gray-400 uppercase tracking-widest">Tribute</span>
+              <button class="copy-quote-btn text-xs text-luxuryGold hover:text-luxuryGoldLight font-semibold tracking-wide flex items-center space-x-1.5 focus:outline-none">
+                <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
+                </svg>
+                <span>Copy Quote</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Quote Card 3 -->
+          <div class="glass-card p-6 rounded-2xl border border-luxuryGold/10 flex flex-col justify-between h-[180px]">
+            <p class="quote-text text-sm italic font-serif text-gray-600 dark:text-gray-300 leading-relaxed">
+              "If love could have saved you, you would have lived forever."
+            </p>
+            <div class="flex items-center justify-between border-t border-gray-200 dark:border-white/10 pt-3 mt-4">
+              <span class="text-[10px] text-gray-400 uppercase tracking-widest">Remembrance</span>
+              <button class="copy-quote-btn text-xs text-luxuryGold hover:text-luxuryGoldLight font-semibold tracking-wide flex items-center space-x-1.5 focus:outline-none">
+                <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
+                </svg>
+                <span>Copy Quote</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Milestones & Success Quotes -->
+        <div id="quote-cat-milestone" class="quote-tab-content hidden grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          
+          <!-- Quote Card 1 -->
+          <div class="glass-card p-6 rounded-2xl border border-luxuryGold/10 flex flex-col justify-between h-[180px]">
+            <p class="quote-text text-sm italic font-serif text-gray-600 dark:text-gray-300 leading-relaxed">
+              "The future belongs to those who believe in the beauty of their dreams."
+            </p>
+            <div class="flex items-center justify-between border-t border-gray-200 dark:border-white/10 pt-3 mt-4">
+              <span class="text-[10px] text-gray-400 uppercase tracking-widest">Eleanor Roosevelt</span>
+              <button class="copy-quote-btn text-xs text-luxuryGold hover:text-luxuryGoldLight font-semibold tracking-wide flex items-center space-x-1.5 focus:outline-none">
+                <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
+                </svg>
+                <span>Copy Quote</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Quote Card 2 -->
+          <div class="glass-card p-6 rounded-2xl border border-luxuryGold/10 flex flex-col justify-between h-[180px]">
+            <p class="quote-text text-sm italic font-serif text-gray-600 dark:text-gray-300 leading-relaxed">
+              "She believed she could, so she did."
+            </p>
+            <div class="flex items-center justify-between border-t border-gray-200 dark:border-white/10 pt-3 mt-4">
+              <span class="text-[10px] text-gray-400 uppercase tracking-widest">Success</span>
+              <button class="copy-quote-btn text-xs text-luxuryGold hover:text-luxuryGoldLight font-semibold tracking-wide flex items-center space-x-1.5 focus:outline-none">
+                <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
+                </svg>
+                <span>Copy Quote</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Quote Card 3 -->
+          <div class="glass-card p-6 rounded-2xl border border-luxuryGold/10 flex flex-col justify-between h-[180px]">
+            <p class="quote-text text-sm italic font-serif text-gray-600 dark:text-gray-300 leading-relaxed">
+              "Honoring a legacy of leadership, commitment, and vision."
+            </p>
+            <div class="flex items-center justify-between border-t border-gray-200 dark:border-white/10 pt-3 mt-4">
+              <span class="text-[10px] text-gray-400 uppercase tracking-widest">Trophy Inscription</span>
+              <button class="copy-quote-btn text-xs text-luxuryGold hover:text-luxuryGoldLight font-semibold tracking-wide flex items-center space-x-1.5 focus:outline-none">
+                <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
+                </svg>
+                <span>Copy Quote</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       ARTISTIC QUOTES & TESTIMONIALS SECTION
+       ========================================== -->
+  <section class="py-24 px-6 md:px-12 bg-white dark:bg-luxuryCharcoal text-luxuryCharcoal dark:text-gray-100">
+    <div class="max-w-7xl mx-auto flex flex-col items-center">
+      <div class="text-center mb-16 flex flex-col items-center">
+        <span class="text-xs font-semibold tracking-[0.2em] text-luxuryGold uppercase">Collector Perspective</span>
+        <h2 class="text-[36px] md:text-[48px] leading-tight font-extrabold tracking-tight mt-2 mb-4 max-w-[600px] text-center">
+          Words of Appreciation
+        </h2>
+        <p class="text-[16px] text-gray-500 dark:text-gray-400 max-w-[480px] text-center">
+          Perspectives from artists, designers, and collectors who experience the clarity of Aura 3D.
+        </p>
+      </div>
+
+      <!-- Quotes Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 w-full scroll-animate">
+        
+        <!-- Quote 1 -->
+        <div class="glass-card p-8 rounded-2xl border border-luxuryGold/10 flex flex-col justify-between h-[300px] relative overflow-hidden group">
+          <!-- Large subtle quotes symbol in background -->
+          <div class="absolute -top-4 -right-2 text-[120px] font-serif text-luxuryGold/5 select-none pointer-events-none transition duration-500 group-hover:scale-110">“</div>
+          <div>
+            <div class="flex text-luxuryGold space-x-1 mb-4">
+              <!-- Star icons -->
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            </div>
+            <p class="text-sm italic text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
+              "Art is the preservation of life's most fleeting sparks. Aura 3D captures these moments and casts them into physical, permanent light."
+            </p>
+          </div>
+          <div class="flex items-center space-x-3 border-t border-gray-200 dark:border-white/10 pt-4">
+            <div class="h-10 w-10 rounded-full bg-luxuryGold/20 flex items-center justify-center font-bold text-luxuryGold font-serif">
+              JL
+            </div>
+            <div>
+              <h4 class="text-sm font-semibold text-luxuryCharcoal dark:text-white">Jean-Louis Laurent</h4>
+              <p class="text-[10px] text-gray-500 dark:text-gray-400">Master Sculptor & Exhibition Curator</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quote 2 -->
+        <div class="glass-card p-8 rounded-2xl border border-luxuryGold/10 flex flex-col justify-between h-[300px] relative overflow-hidden group">
+          <div class="absolute -top-4 -right-2 text-[120px] font-serif text-luxuryGold/5 select-none pointer-events-none transition duration-500 group-hover:scale-110">“</div>
+          <div>
+            <div class="flex text-luxuryGold space-x-1 mb-4">
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            </div>
+            <p class="text-sm italic text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
+              "In every block of crystal, there is a memory waiting to be illuminated. We do not just engrave glass; we solidify history."
+            </p>
+          </div>
+          <div class="flex items-center space-x-3 border-t border-gray-200 dark:border-white/10 pt-4">
+            <div class="h-10 w-10 rounded-full bg-luxuryGold/20 flex items-center justify-center font-bold text-luxuryGold font-serif">
+              MV
+            </div>
+            <div>
+              <h4 class="text-sm font-semibold text-luxuryCharcoal dark:text-white">Marcus Vance</h4>
+              <p class="text-[10px] text-gray-500 dark:text-gray-400">Founder & Art Director</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quote 3 -->
+        <div class="glass-card p-8 rounded-2xl border border-luxuryGold/10 flex flex-col justify-between h-[300px] relative overflow-hidden group">
+          <div class="absolute -top-4 -right-2 text-[120px] font-serif text-luxuryGold/5 select-none pointer-events-none transition duration-500 group-hover:scale-110">“</div>
+          <div>
+            <div class="flex text-luxuryGold space-x-1 mb-4">
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            </div>
+            <p class="text-sm italic text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
+              "A breathtaking marriage of technology and human emotion. Seeing my family's portraits rendered in subsurface light is magical."
+            </p>
+          </div>
+          <div class="flex items-center space-x-3 border-t border-gray-200 dark:border-white/10 pt-4">
+            <div class="h-10 w-10 rounded-full bg-luxuryGold/20 flex items-center justify-center font-bold text-luxuryGold font-serif">
+              HV
+            </div>
+            <div>
+              <h4 class="text-sm font-semibold text-luxuryCharcoal dark:text-white">Helen Vance</h4>
+              <p class="text-[10px] text-gray-500 dark:text-gray-400">Collector & Patron</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       FOOTER (Consistent on all pages)
+       ========================================== -->
+  <footer class="bg-luxuryCharcoal text-gray-300 border-t border-luxuryGold/10 py-16 px-6 md:px-12">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+      <!-- About / Brand Column -->
+      <div class="flex flex-col space-y-4">
+        <a href="index.html" class="flex items-center space-x-2 text-xl font-bold tracking-widest text-luxuryGold">
+          <svg class="h-6 w-6 text-luxuryGold rtl-flip" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5" />
+            <polyline points="12 2 12 22" />
+            <polyline points="12 12 22 8.5" />
+            <polyline points="12 12 2 8.5" />
+          </svg>
+          <span>AURA 3D</span>
+        </a>
+        <p class="text-xs text-gray-400 leading-relaxed max-w-[280px]">
+          Luxury subsurface 3D laser engraving, transforming memories into pristine crystal glass blocks. Crafted with
+          dedication, optical fidelity, and prestige packaging.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="flex flex-col space-y-4">
+        <h4 class="text-sm font-serif font-semibold text-white tracking-widest uppercase mb-2">Navigation</h4>
+        <ul class="space-y-2 text-xs">
+          <li><a href="index.html" class="hover:text-luxuryGold transition">Home 1</a></li>
+          <li><a href="home2.html" class="hover:text-luxuryGold transition">Home 2</a></li>
+          <li><a href="about.html" class="hover:text-luxuryGold transition">About</a></li>
+          <li><a href="gallery.html" class="hover:text-luxuryGold transition">Gallery</a></li>
+          <li><a href="custom.html" class="hover:text-luxuryGold transition">Custom Orders</a></li>
+        </ul>
+      </div>
+
+      <!-- Secondary Links -->
+      <div class="flex flex-col space-y-4">
+        <h4 class="text-sm font-serif font-semibold text-white tracking-widest uppercase mb-2">Explore</h4>
+        <ul class="space-y-2 text-xs">
+          <li><a href="blog.html" class="hover:text-luxuryGold transition">Blog Insights</a></li>
+          <li><a href="contact.html" class="hover:text-luxuryGold transition">Contact & Location</a></li>
+          <li><a href="login.html" class="hover:text-luxuryGold transition">Customer Login</a></li>
+          <li><a href="signup.html" class="hover:text-luxuryGold transition">Member Registration</a></li>
+        </ul>
+      </div>
+
+      <div class="flex flex-col space-y-3">
+        <h4 class="text-sm font-serif font-semibold text-white tracking-widest uppercase mb-4">Design Lab</h4>
+        <p class="text-xs text-gray-400">104 Fifth Avenue, Suite 1200<br>New York, NY 10011</p>
+        <p class="text-xs text-gray-400">Email: concierge@aura3dcrystals.com<br>Phone: +1 (800) 555-AURA</p>
+
+        <!-- Socials -->
+        <div class="flex space-x-4 pt-2 rtl:space-x-reverse">
+          <a href="#" class="text-gray-400 hover:text-luxuryGold transition" aria-label="Instagram">
+            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.8.3 2.2.5.6.2 1 .5 1.5 1s.8.9 1 1.5c.2.4.4 1 .5 2.2.1 1.2.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.3 1.8-.5 2.2-.2.6-.5 1-1 1.5s-.9.8-1.5 1c-.4.2-1 .4-2.2.5-1.2.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.8-.3-2.2-.5-.6-.2-1-.5-1.5-1s-.8-.9-1-1.5c-.2-.4-.4-1-.5-2.2-.1-1.2-.1-1.6-.1-4.8s0-3.6.1-4.8c.1-1.2.3-1.8.5-2.2.2-.6.5-1 1-1.5s.9-.8 1.5-1c.4-.2 1-.4 2.2-.5 1.2-.1 1.6-.1 4.8-.1zM12 7c-2.8 0-5 2.2-5 5s2.2 5 5 5 5-2.2 5-5-2.2-5-5-5zm0 8.2c-1.8 0-3.2-1.4-3.2-3.2s1.4-3.2 3.2-3.2 3.2 1.4 3.2 3.2-1.4 3.2-3.2 3.2zm4.7-9.4c0 .6-.5 1.1-1.1 1.1s-1.1-.5-1.1-1.1.5-1.1 1.1-1.1 1.1.5 1.1 1.1z" />
+            </svg>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-luxuryGold transition" aria-label="Pinterest">
+            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 2a10 10 0 00-3.6 19.3c0-.8.1-2 .3-2.8l1.3-5.5a3 3 0 01-.3-1.4c0-1.4.8-2.4 1.8-2.4.9 0 1.3.6 1.3 1.4 0 .9-.5 2.2-.8 3.4-.2 1 .5 1.8 1.5 1.8 1.8 0 3-1.9 3-4.6 0-2.2-1.5-3.8-4-3.8-2.9 0-4.7 2.2-4.7 4.6 0 .9.3 1.8.7 2.3.1.1.1.2.1.3l-.3 1.2c-.1.2-.2.3-.4.2-1.3-.6-1.9-2-1.9-3.7 0-3 2.5-6.5 7.1-6.5 3.8 0 6.2 2.7 6.2 5.7 0 3.7-2.1 6.4-5.2 6.4-1 0-2-.6-2.3-1.2l-.6 2.4c-.2.9-.8 1.9-1.2 2.5a10 10 0 106.8-18.7z" />
+            </svg>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-luxuryGold transition" aria-label="Facebook">
+            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3V2z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="max-w-7xl mx-auto border-t border-white/5 mt-12 pt-6 flex flex-col md:flex-row items-center justify-between text-xs text-gray-500">
+      <p>&copy; 2026 Aura 3D Inc. All rights reserved.</p>
+      <div class="flex space-x-6 mt-4 md:mt-0 rtl:space-x-reverse">
+        <a href="#" class="hover:text-luxuryGold transition">Privacy Policy</a>
+        <a href="#" class="hover:text-luxuryGold transition">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Core Scripts -->
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

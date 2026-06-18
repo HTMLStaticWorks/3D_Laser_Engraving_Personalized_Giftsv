@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | Aura 3D - Artisans of Laser Engraving</title>
+  <meta name="description"
+    content="Learn about Aura 3D's mission, founder journey, specialized laser craft, and expert manufacturing process behind premium 3D crystal gifts.">
+  <!-- Tailwind CSS 3 CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            luxuryBlack: '#0D0D0D',
+            luxuryCharcoal: '#1A1A1A',
+            luxuryCharcoalLight: '#262626',
+            luxuryGold: '#D4AF37',
+            luxuryGoldLight: '#E5C483',
+            luxuryBeige: '#F5F2EB',
+            luxuryBeigeDark: '#EAE6DF',
+            luxuryLavender: '#E6E6FA',
+            luxuryPurple: '#4B0082',
+            luxuryPurpleDark: '#2D1E3D',
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body
+  class="bg-luxuryBeige text-luxuryCharcoal dark:bg-luxuryBlack dark:text-gray-100 transition-colors duration-500 pt-24 overflow-x-hidden">
+
+  <!-- ==========================================
+       NAVBAR (Identical on all pages)
+       ========================================== -->
+  <nav id="navbar"
+    class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-4 px-6 md:px-12 flex items-center justify-between">
+    <!-- Logo -->
+    <a href="index.html" class="flex items-center space-x-2 text-xl font-bold tracking-widest text-luxuryGold">
+      <svg class="h-6 w-6 text-luxuryGold rtl-flip" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        stroke-width="2">
+        <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5" />
+        <polyline points="12 2 12 22" />
+        <polyline points="12 12 22 8.5" />
+        <polyline points="12 12 2 8.5" />
+      </svg>
+      <span>AURA 3D</span>
+    </a>
+
+    <!-- Desktop Navigation Items (Centered) -->
+    <div class="hidden xl:flex items-center space-x-6">
+      <a href="index.html" class="nav-link text-sm font-semibold tracking-wider hover:text-luxuryGold transition">Home
+        1</a>
+      <a href="home2.html" class="nav-link text-sm font-semibold tracking-wider hover:text-luxuryGold transition">Home
+        2</a>
+      <a href="about.html"
+        class="nav-link text-sm font-semibold tracking-wider hover:text-luxuryGold transition">About</a>
+      <a href="custom.html"
+        class="nav-link text-sm font-semibold tracking-wider hover:text-luxuryGold transition">Custom Orders</a>
+      <a href="gallery.html"
+        class="nav-link text-sm font-semibold tracking-wider hover:text-luxuryGold transition">Gallery</a>
+      <a href="blog.html"
+        class="nav-link text-sm font-semibold tracking-wider hover:text-luxuryGold transition">Blog</a>
+      <a href="contact.html"
+        class="nav-link text-sm font-semibold tracking-wider hover:text-luxuryGold transition">Contact</a>
+    </div>
+
+    <!-- Desktop Controls (Right-aligned) -->
+    <div class="hidden xl:flex items-center space-x-6">
+      <!-- Theme Toggle -->
+      <button
+        class="theme-toggle flex items-center justify-center h-9 w-9 rounded border border-luxuryGold/30 text-luxuryGold hover:border-luxuryGold hover:bg-luxuryGold/10 transition"
+        aria-label="Toggle Theme">
+        <span class="theme-icon"></span>
+      </button>
+
+      <!-- RTL Toggle -->
+      <button
+        class="rtl-toggle flex items-center justify-center h-9 px-3 text-xs rounded border border-luxuryGold/30 text-luxuryGold font-mono hover:border-luxuryGold hover:bg-luxuryGold/10 transition"
+        aria-label="Toggle RTL">
+        <span class="rtl-label">RTL</span>
+      </button>
+
+      <a href="signup.html"
+        class="flex items-center justify-center h-9 px-4 rounded border border-luxuryGold text-luxuryGold text-sm font-semibold tracking-wider hover:bg-luxuryGold hover:text-luxuryCharcoal transition duration-300">Signup</a>
+    </div>
+
+    <!-- Mobile Hamburger -->
+    <div class="xl:hidden flex items-center space-x-4">
+      <!-- Theme Toggle Mobile -->
+      <button
+        class="theme-toggle flex items-center justify-center h-8 w-8 rounded border border-luxuryGold/30 text-luxuryGold hover:border-luxuryGold hover:bg-luxuryGold/10 transition"
+        aria-label="Toggle Theme">
+        <span class="theme-icon"></span>
+      </button>
+
+      <!-- RTL Toggle Mobile -->
+      <button
+        class="rtl-toggle flex items-center justify-center h-8 px-2.5 text-[10px] rounded border border-luxuryGold/30 text-luxuryGold font-mono hover:border-luxuryGold hover:bg-luxuryGold/10 transition"
+        aria-label="Toggle RTL">
+        <span class="rtl-label">RTL</span>
+      </button>
+
+      <button id="mobile-menu-btn"  class="text-luxuryGold focus:outline-none" aria-label="Toggle Mobile Menu">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu Drawer -->
+    <div id="mobile-menu"
+      class="hidden absolute top-full left-0 w-full bg-luxuryBlack/95 dark:bg-luxuryBlack/98 border-b border-luxuryGold/10 p-6 flex flex-col space-y-4 xl:hidden shadow-xl z-50">
+      <a href="index.html"
+        class="nav-link text-base font-semibold tracking-wider text-gray-300 hover:text-luxuryGold transition py-2 border-b border-white/5">Home
+        1</a>
+      <a href="home2.html"
+        class="nav-link text-base font-semibold tracking-wider text-gray-300 hover:text-luxuryGold transition py-2 border-b border-white/5">Home
+        2</a>
+      <a href="about.html"
+        class="nav-link text-base font-semibold tracking-wider text-gray-300 hover:text-luxuryGold transition py-2 border-b border-white/5">About</a>
+      <a href="custom.html"
+        class="nav-link text-base font-semibold tracking-wider text-gray-300 hover:text-luxuryGold transition py-2 border-b border-white/5">Custom
+        Orders</a>
+      <a href="gallery.html"
+        class="nav-link text-base font-semibold tracking-wider text-gray-300 hover:text-luxuryGold transition py-2 border-b border-white/5">Gallery</a>
+      <a href="blog.html"
+        class="nav-link text-base font-semibold tracking-wider text-gray-300 hover:text-luxuryGold transition py-2 border-b border-white/5">Blog</a>
+      <a href="contact.html"
+        class="nav-link text-base font-semibold tracking-wider text-gray-300 hover:text-luxuryGold transition py-2 border-b border-white/5">Contact</a>
+      <a href="signup.html"
+        class="inline-block text-center px-4 py-2 rounded bg-luxuryGold text-luxuryCharcoal text-base font-semibold tracking-wider hover:bg-luxuryGoldLight transition">Signup</a>
+    </div>
+  </nav>
+
+  <!-- ==========================================
+       HERO SECTION
+       ========================================== -->
+  <header
+    class="relative min-h-[50vh] flex items-center justify-center py-20 px-6 md:px-12 bg-cover bg-center text-white"
+    style="background-image: url('assets/images/hero_about.png');">
+    <div class="absolute inset-0 bg-luxuryBlack/80"></div>
+    <div class="relative max-w-4xl w-full text-center flex flex-col items-center space-y-4 z-10">
+      <span class="text-xs md:text-sm font-semibold tracking-[0.2em] text-luxuryGold uppercase">Our Story</span>
+      <h1 class="text-[48px] md:text-[64px] leading-tight font-extrabold tracking-tight max-w-[600px] font-serif">
+        Crafting Legacy In <span class="text-gold-gradient">Solid Glass</span>
+      </h1>
+      <p class="text-[16px] text-gray-300 max-w-[480px]">
+        Uncompromising precision, optical clarity, and structural artistry that preserve memories forever.
+      </p>
+    </div>
+  </header>
+
+  <!-- ==========================================
+       BRAND STORY SECTION
+       ========================================== -->
+  <section class="py-24 px-6 md:px-12 bg-white dark:bg-luxuryCharcoal text-luxuryCharcoal dark:text-gray-100">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+      <!-- Copy column -->
+      <div class="flex flex-col space-y-6">
+        <span class="text-xs font-semibold tracking-[0.2em] text-luxuryGold uppercase font-serif">The Founder
+          Journey</span>
+        <h2 class="text-[36px] md:text-[48px] leading-tight font-extrabold tracking-tight max-w-[600px]">
+          Artisans Of Light & Glass
+        </h2>
+        <p class="text-[16px] text-gray-500 dark:text-gray-400 max-w-[480px] leading-relaxed">
+          Founded in 2012 by master glass technician Marcus Vance, Aura 3D started with a singular vision: to replace
+          generic flat-printed merchandise with stunning, high-fidelity physical sculptures.
+        </p>
+        <p class="text-[16px] text-gray-500 dark:text-gray-400 max-w-[480px] leading-relaxed">
+          Combining Vance's knowledge of optical refractivity and German laser diode technology, we pioneered subsurface
+          marking pipelines that achieve microscopic depth gradients without compromising outer structural polish.
+        </p>
+
+        <!-- Founder signature signoff -->
+        <div class="pt-6 border-t border-gray-200 dark:border-white/10 max-w-[480px]">
+          <h4 class="text-lg font-serif font-bold text-luxuryCharcoal dark:text-white">Marcus Vance</h4>
+          <p class="text-xs text-luxuryGold">Founder & Chief Art Director</p>
+        </div>
+      </div>
+
+      <!-- Workshop Visuals -->
+      <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-luxuryGold/20 h-[450px]">
+        <img src="assets/images/hero_custom.png" alt="Laser designer working on complex crystal shapes"
+          class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-t from-luxuryBlack via-transparent to-transparent opacity-60"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
+       OUR MISSION SECTION
+       ========================================== -->
+  <section class="py-24 px-6 md:px-12 bg-luxuryBeigeDark dark:bg-luxuryBlack text-luxuryCharcoal dark:text-gray-100">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+      <!-- Picture column -->
+      <div
+        class="order-2 lg:order-1 relative rounded-2xl overflow-hidden shadow-2xl border border-luxuryGold/20 h-[450px]">
+        <img src="https://images.pexels.com/photos/8364121/pexels-photo-8364121.jpeg"
+          alt="Premium crystal gift boxes lined in velvet" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-t from-luxuryBlack via-transparent to-transparent opacity-60"></div>
+      </div>
+
+      <!-- Copy column -->
+      <div class="order-1 lg:order-2 flex flex-col space-y-6">
+        <span class="text-xs font-semibold tracking-[0.2em] text-luxuryGold uppercase font-serif">Preservation
+          Commitment</span>
+        <h2 class="text-[36px] md:text-[48px] leading-tight font-extrabold tracking-tight max-w-[600px]">
+          Our Pure Quality Mission
+        </h2>
+        <p class="text-[16px] text-gray-500 dark:text-gray-400 max-w-[480px] leading-relaxed">
+          We believe high-end moments shouldn't fade. Our mission is to forge relationships, commemorate unions, and
+          solidify executive milestones with items of heavy prestige, physical weight, and absolute optical
+          transparency.
+        </p>
+        <p class="text-[16px] text-gray-500 dark:text-gray-400 max-w-[480px] leading-relaxed">
+          That is why we enforce rigid triple-point inspections. Any block displaying minor glass seeds, stress
+          patterns, or micro-cracks is discarded immediately, ensuring only perfect crystals arrive at your doorstep.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
+       EXPERTISE GRID SECTION
+       ========================================== -->
+  <section class="py-24 px-6 md:px-12 bg-white dark:bg-luxuryCharcoal text-luxuryCharcoal dark:text-gray-100">
+    <div class="max-w-7xl mx-auto flex flex-col items-center">
+      <div class="text-center mb-16 flex flex-col items-center">
+        <span class="text-xs font-semibold tracking-[0.2em] text-luxuryGold uppercase">Our Expertise</span>
+        <h2 class="text-[36px] md:text-[48px] leading-tight font-extrabold tracking-tight mt-2 mb-4 max-w-[600px]">
+          Craftsmanship Verticals
+        </h2>
+        <p class="text-[16px] text-gray-500 dark:text-gray-400 max-w-[480px]">
+          The precise technical pillars behind our luxury personalization output.
+        </p>
+      </div>
+
+      <!-- Expertise Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 w-full scroll-animate">
+
+        <!-- Laser Engraving -->
+        <div class="glass-card p-8 rounded-2xl border border-luxuryGold/10 flex flex-col justify-between h-[280px]">
+          <div>
+            <div class="h-10 w-10 text-luxuryGold mb-4">
+              <svg class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <h3 class="text-lg md:text-xl font-serif mb-2 text-luxuryCharcoal dark:text-white">Laser Engraving</h3>
+            <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">Microscopic 3D coordinate point laser
+              marking focusing entirely inside the K9 optical crystal blocks.</p>
+          </div>
+        </div>
+
+        <!-- Crystal Design -->
+        <div class="glass-card p-8 rounded-2xl border border-luxuryGold/10 flex flex-col justify-between h-[280px]">
+          <div>
+            <div class="h-10 w-10 text-luxuryGold mb-4">
+              <svg class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
+              </svg>
+            </div>
+            <h3 class="text-lg md:text-xl font-serif mb-2 text-luxuryCharcoal dark:text-white">Crystal Design</h3>
+            <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">Expert model construction, perspective
+              mapping, and lighting base adaptations for optical dispersion.</p>
+          </div>
+        </div>
+
+        <!-- Corporate Gifting -->
+        <div class="glass-card p-8 rounded-2xl border border-luxuryGold/10 flex flex-col justify-between h-[280px]">
+          <div>
+            <div class="h-10 w-10 text-luxuryGold mb-4">
+              <svg class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <h3 class="text-lg md:text-xl font-serif mb-2 text-luxuryCharcoal dark:text-white">Corporate Gifting</h3>
+            <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">Mass customization pipelines, company
+              logo engraving alignment, and executive packaging options.</p>
+          </div>
+        </div>
+
+        <!-- Custom Manufacturing -->
+        <div class="glass-card p-8 rounded-2xl border border-luxuryGold/10 flex flex-col justify-between h-[280px]">
+          <div>
+            <div class="h-10 w-10 text-luxuryGold mb-4">
+              <svg class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+              </svg>
+            </div>
+            <h3 class="text-lg md:text-xl font-serif mb-2 text-luxuryCharcoal dark:text-white">Custom Cuts</h3>
+            <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">Bespoke crystal dimension cuts,
+              diamond-faceted edges, and integrated led light stand mounts.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       MATERIALS & TECHNOLOGY SECTION
+       ========================================== -->
+  <section class="py-24 px-6 md:px-12 bg-luxuryBeigeDark dark:bg-luxuryBlack text-luxuryCharcoal dark:text-gray-100">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+      <!-- Content column -->
+      <div class="flex flex-col space-y-6">
+        <span class="text-xs font-semibold tracking-[0.2em] text-luxuryGold uppercase font-serif">Uncompromising
+          Standards</span>
+        <h2 class="text-[36px] md:text-[48px] leading-tight font-extrabold tracking-tight max-w-[600px]">
+          K9 Optical Glass & Precision Green Diodes
+        </h2>
+        <p class="text-[16px] text-gray-500 dark:text-gray-400 max-w-[480px] leading-relaxed">
+          The foundation of every Aura 3D piece is premium-grade K9 borosilicate glass. Renowned for its extreme
+          durability, high refractivity, and absolute bubble-free clarity, our crystal is cut and hand-polished by
+          master lapidaries.
+        </p>
+        <p class="text-[16px] text-gray-500 dark:text-gray-400 max-w-[480px] leading-relaxed">
+          Inside this flawless medium, our state-of-the-art German-engineered green laser diodes (operating at a precise
+          532nm wavelength) focus deep beneath the polished surface. Without causing even a micro-fracture on the
+          exterior, they create thousands of microscopic points of high-definition light scatter that form the 3D
+          sculpture inside.
+        </p>
+      </div>
+
+      <!-- Image column -->
+      <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-luxuryGold/20 h-[450px]">
+        <img src="assets/images/about_material.png" alt="Pure raw K9 optical crystal prism refracting warm golden light"
+          class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-t from-luxuryBlack via-transparent to-transparent opacity-60"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
+       CUSTOMER PROMISES SECTION
+       ========================================== -->
+  <section class="py-24 px-6 md:px-12 bg-white dark:bg-luxuryCharcoal text-luxuryCharcoal dark:text-gray-100">
+    <div class="max-w-7xl mx-auto flex flex-col items-center">
+      <div class="text-center mb-16 flex flex-col items-center">
+        <span class="text-xs font-semibold tracking-[0.2em] text-luxuryGold uppercase">The Aura 3D Standard</span>
+        <h2 class="text-[36px] md:text-[48px] leading-tight font-extrabold tracking-tight mt-2 mb-4 max-w-[600px]">
+          Signature Gifting Experience
+        </h2>
+        <p class="text-[16px] text-gray-500 dark:text-gray-400 max-w-[480px]">
+          Every keepsake is a testament to relationships and milestones, backed by our ironclad guarantees.
+        </p>
+      </div>
+
+      <!-- 3 Columns grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 w-full scroll-animate">
+
+        <!-- Promise 1 -->
+        <div class="glass-card p-8 rounded-2xl border border-luxuryGold/10 flex flex-col justify-between h-[300px]">
+          <div>
+            <div class="h-10 w-10 text-luxuryGold mb-4">
+              <svg class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </div>
+            <h3 class="text-lg md:text-xl font-serif mb-2 text-luxuryCharcoal dark:text-white">Lifetime Fidelity
+              Guarantee</h3>
+            <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
+              Because our engraving process alters the physical properties of the inner crystal coordinates, the 3D
+              model inside will never fade, blur, discolor, or lose its pristine alignment for generations to come.
+            </p>
+          </div>
+        </div>
+
+        <!-- Promise 2 -->
+        <div class="glass-card p-8 rounded-2xl border border-luxuryGold/10 flex flex-col justify-between h-[300px]">
+          <div>
+            <div class="h-10 w-10 text-luxuryGold mb-4">
+              <svg class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m-8-4V7l8 4m0 0v10" />
+              </svg>
+            </div>
+            <h3 class="text-lg md:text-xl font-serif mb-2 text-luxuryCharcoal dark:text-white">Royal Velvet Packaging
+            </h3>
+            <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
+              Unboxing is a crucial part of luxury gifting. Every custom order is carefully cradled inside a
+              satin-lined, secure presentation gift box with magnetic snap closures, accompanied by a certificate of
+              authenticity.
+            </p>
+          </div>
+        </div>
+
+        <!-- Promise 3 -->
+        <div class="glass-card p-8 rounded-2xl border border-luxuryGold/10 flex flex-col justify-between h-[300px]">
+          <div>
+            <div class="h-10 w-10 text-luxuryGold mb-4">
+              <svg class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9.663 17h4.673M12 3v1m6.364.364l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+              </svg>
+            </div>
+            <h3 class="text-lg md:text-xl font-serif mb-2 text-luxuryCharcoal dark:text-white">Neural 3D Rendering</h3>
+            <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
+              We employ advanced mathematical depth mapping software that reconstructs single flat 2D portrait
+              submissions into multi-perspective volumetric models, offering a lifelike 180-degree visual angle.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       FOOTER (Consistent on all pages)
+       ========================================== -->
+  <footer class="bg-luxuryCharcoal text-gray-300 border-t border-luxuryGold/10 py-16 px-6 md:px-12">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+      <!-- About / Brand Column -->
+      <div class="flex flex-col space-y-4">
+        <a href="index.html" class="flex items-center space-x-2 text-xl font-bold tracking-widest text-luxuryGold">
+          <svg class="h-6 w-6 text-luxuryGold rtl-flip" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5" />
+            <polyline points="12 2 12 22" />
+            <polyline points="12 12 22 8.5" />
+            <polyline points="12 12 2 8.5" />
+          </svg>
+          <span>AURA 3D</span>
+        </a>
+        <p class="text-xs text-gray-400 leading-relaxed max-w-[280px]">
+          Luxury subsurface 3D laser engraving, transforming memories into pristine crystal glass blocks. Crafted with
+          dedication, optical fidelity, and prestige packaging.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="flex flex-col space-y-4">
+        <h4 class="text-sm font-serif font-semibold text-white tracking-widest uppercase mb-2">Navigation</h4>
+        <ul class="space-y-2 text-xs">
+          <li><a href="index.html" class="hover:text-luxuryGold transition">Home 1</a></li>
+          <li><a href="home2.html" class="hover:text-luxuryGold transition">Home 2</a></li>
+          <li><a href="about.html" class="hover:text-luxuryGold transition">About</a></li>
+          <li><a href="gallery.html" class="hover:text-luxuryGold transition">Gallery</a></li>
+          <li><a href="custom.html" class="hover:text-luxuryGold transition">Custom Orders</a></li>
+        </ul>
+      </div>
+
+      <!-- Secondary Links -->
+      <div class="flex flex-col space-y-4">
+        <h4 class="text-sm font-serif font-semibold text-white tracking-widest uppercase mb-2">Explore</h4>
+        <ul class="space-y-2 text-xs">
+          <li><a href="blog.html" class="hover:text-luxuryGold transition">Blog Insights</a></li>
+          <li><a href="contact.html" class="hover:text-luxuryGold transition">Contact & Location</a></li>
+          <li><a href="login.html" class="hover:text-luxuryGold transition">Customer Login</a></li>
+          <li><a href="signup.html" class="hover:text-luxuryGold transition">Member Registration</a></li>
+        </ul>
+      </div>
+
+      <div class="flex flex-col space-y-3">
+        <h4 class="text-sm font-serif font-semibold text-white tracking-widest uppercase mb-4">Design Lab</h4>
+        <p class="text-xs text-gray-400">104 Fifth Avenue, Suite 1200<br>New York, NY 10011</p>
+        <p class="text-xs text-gray-400">Email: concierge@aura3dcrystals.com<br>Phone: +1 (800) 555-AURA</p>
+
+        <!-- Socials -->
+        <div class="flex space-x-4 pt-2 rtl:space-x-reverse">
+          <a href="#" class="text-gray-400 hover:text-luxuryGold transition" aria-label="Instagram">
+            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.8.3 2.2.5.6.2 1 .5 1.5 1s.8.9 1 1.5c.2.4.4 1 .5 2.2.1 1.2.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.3 1.8-.5 2.2-.2.6-.5 1-1 1.5s-.9.8-1.5 1c-.4.2-1 .4-2.2.5-1.2.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.8-.3-2.2-.5-.6-.2-1-.5-1.5-1s-.8-.9-1-1.5c-.2-.4-.4-1-.5-2.2-.1-1.2-.1-1.6-.1-4.8s0-3.6.1-4.8c.1-1.2.3-1.8.5-2.2.2-.6.5-1 1-1.5s.9-.8 1.5-1c.4-.2 1-.4 2.2-.5 1.2-.1 1.6-.1 4.8-.1zM12 7c-2.8 0-5 2.2-5 5s2.2 5 5 5 5-2.2 5-5-2.2-5-5-5zm0 8.2c-1.8 0-3.2-1.4-3.2-3.2s1.4-3.2 3.2-3.2 3.2 1.4 3.2 3.2-1.4 3.2-3.2 3.2zm4.7-9.4c0 .6-.5 1.1-1.1 1.1s-1.1-.5-1.1-1.1.5-1.1 1.1-1.1 1.1.5 1.1 1.1z" />
+            </svg>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-luxuryGold transition" aria-label="Pinterest">
+            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 2a10 10 0 00-3.6 19.3c0-.8.1-2 .3-2.8l1.3-5.5a3 3 0 01-.3-1.4c0-1.4.8-2.4 1.8-2.4.9 0 1.3.6 1.3 1.4 0 .9-.5 2.2-.8 3.4-.2 1 .5 1.8 1.5 1.8 1.8 0 3-1.9 3-4.6 0-2.2-1.5-3.8-4-3.8-2.9 0-4.7 2.2-4.7 4.6 0 .9.3 1.8.7 2.3.1.1.1.2.1.3l-.3 1.2c-.1.2-.2.3-.4.2-1.3-.6-1.9-2-1.9-3.7 0-3 2.5-6.5 7.1-6.5 3.8 0 6.2 2.7 6.2 5.7 0 3.7-2.1 6.4-5.2 6.4-1 0-2-.6-2.3-1.2l-.6 2.4c-.2.9-.8 1.9-1.2 2.5a10 10 0 106.8-18.7z" />
+            </svg>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-luxuryGold transition" aria-label="Facebook">
+            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3V2z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="max-w-7xl mx-auto border-t border-white/5 mt-12 pt-6 flex flex-col md:flex-row items-center justify-between text-xs text-gray-500">
+      <p>&copy; 2026 Aura 3D Inc. All rights reserved.</p>
+      <div class="flex space-x-6 mt-4 md:mt-0 rtl:space-x-reverse">
+        <a href="#" class="hover:text-luxuryGold transition">Privacy Policy</a>
+        <a href="#" class="hover:text-luxuryGold transition">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Core Scripts -->
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Registration | Aura 3D - Luxury Custom Gifts</title>
+  <meta name="description" content="Register your customer profile on Aura 3D to save personalized engraving files, track design mockups, and obtain priority support.">
+  <!-- Tailwind CSS 3 CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            luxuryBlack: '#0D0D0D',
+            luxuryCharcoal: '#1A1A1A',
+            luxuryCharcoalLight: '#262626',
+            luxuryGold: '#D4AF37',
+            luxuryGoldLight: '#E5C483',
+            luxuryBeige: '#F5F2EB',
+            luxuryBeigeDark: '#EAE6DF',
+            luxuryLavender: '#E6E6FA',
+            luxuryPurple: '#4B0082',
+            luxuryPurpleDark: '#2D1E3D',
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-luxuryBeige text-luxuryCharcoal dark:bg-luxuryBlack dark:text-gray-100 transition-colors duration-500 overflow-x-hidden flex items-center justify-center min-h-screen py-12">
+
+  <!-- Top Bar Controls (Theme and RTL) -->
+  <div class="absolute top-6 right-6 flex items-center space-x-4 z-50">
+    <!-- Theme Toggle -->
+    <button
+      class="theme-toggle flex items-center justify-center h-9 w-9 rounded border border-luxuryGold/30 text-luxuryGold hover:border-luxuryGold hover:bg-luxuryGold/10 transition"
+      aria-label="Toggle Theme">
+      <span class="theme-icon"></span>
+    </button>
+
+    <!-- RTL Toggle -->
+    <button
+      class="rtl-toggle flex items-center justify-center h-9 px-3 text-xs rounded border border-luxuryGold/30 text-luxuryGold font-mono hover:border-luxuryGold hover:bg-luxuryGold/10 transition"
+      aria-label="Toggle RTL">
+      <span class="rtl-label">RTL</span>
+    </button>
+  </div>
+
+  <!-- ==========================================
+       MAIN CONTENT (Centered Signup Card)
+       ========================================== -->
+  <main class="w-full max-w-md px-6">
+    <div class="glass-card p-8 md:p-12 rounded-3xl border border-luxuryGold/20 shadow-2xl relative">
+      <div class="text-center mb-8 flex flex-col items-center">
+        <!-- Logo Link -->
+        <a href="index.html" class="flex items-center space-x-2 text-xl font-bold tracking-widest text-luxuryGold mb-6">
+          <svg class="h-6 w-6 text-luxuryGold rtl-flip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5" />
+            <polyline points="12 2 12 22" />
+            <polyline points="12 12 22 8.5" />
+            <polyline points="12 12 2 8.5" />
+          </svg>
+          <span>AURA 3D</span>
+        </a>
+        <span class="text-xs font-mono text-luxuryGold uppercase tracking-widest">Onboarding Desk</span>
+        <h2 class="text-2xl md:text-3xl font-serif text-luxuryCharcoal dark:text-white mt-1">Create Account</h2>
+      </div>
+
+      <form class="space-y-4">
+        
+        <!-- Name field -->
+        <div>
+          <label class="block text-xs font-bold tracking-wider text-luxuryGold uppercase mb-2">Full Name *</label>
+          <input required type="text" placeholder="Sarah Jenkins" class="w-full bg-transparent border border-luxuryGold/20 rounded p-3 text-sm focus:border-luxuryGold focus:outline-none dark:text-white placeholder-gray-500">
+        </div>
+
+        <!-- Email field -->
+        <div>
+          <label class="block text-xs font-bold tracking-wider text-luxuryGold uppercase mb-2">Email Address *</label>
+          <input required type="email" placeholder="sarah@example.com" class="w-full bg-transparent border border-luxuryGold/20 rounded p-3 text-sm focus:border-luxuryGold focus:outline-none dark:text-white placeholder-gray-500">
+        </div>
+
+        <!-- Phone field -->
+        <div>
+          <label class="block text-xs font-bold tracking-wider text-luxuryGold uppercase mb-2">Phone Number *</label>
+          <input required type="tel" placeholder="+1 (555) 123-4567" class="w-full bg-transparent border border-luxuryGold/20 rounded p-3 text-sm focus:border-luxuryGold focus:outline-none dark:text-white placeholder-gray-500">
+        </div>
+
+        <!-- Password field with Toggle Eye -->
+        <div>
+          <label class="block text-xs font-bold tracking-wider text-luxuryGold uppercase mb-2">Password *</label>
+          <div class="relative flex items-center">
+            <input required id="signup-password" type="password" placeholder="••••••••" class="w-full bg-transparent border border-luxuryGold/20 rounded p-3 text-sm focus:border-luxuryGold focus:outline-none dark:text-white placeholder-gray-500 pr-10 pl-3">
+            
+            <!-- Eye Toggle Button -->
+            <button type="button" class="password-toggle-btn absolute right-3 focus:outline-none" aria-label="Toggle Password Visibility">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400 hover:text-luxuryGold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Confirm Password field with Toggle Eye -->
+        <div>
+          <label class="block text-xs font-bold tracking-wider text-luxuryGold uppercase mb-2">Confirm Password *</label>
+          <div class="relative flex items-center">
+            <input required id="signup-confirm-password" type="password" placeholder="••••••••" class="w-full bg-transparent border border-luxuryGold/20 rounded p-3 text-sm focus:border-luxuryGold focus:outline-none dark:text-white placeholder-gray-500 pr-10 pl-3">
+            
+            <!-- Eye Toggle Button -->
+            <button type="button" class="password-toggle-btn absolute right-3 focus:outline-none" aria-label="Toggle Password Visibility">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400 hover:text-luxuryGold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Agree check -->
+        <div class="text-xs pt-2">
+          <label class="flex items-center space-x-2 rtl:space-x-reverse cursor-pointer">
+            <input required type="checkbox" class="accent-luxuryGold h-4 w-4 bg-transparent border border-luxuryGold/20 rounded focus:ring-0">
+            <span class="text-gray-500 dark:text-gray-400">I agree to the <a href="#" class="text-luxuryGold hover:underline">Terms & Conditions</a></span>
+          </label>
+        </div>
+
+        <button type="submit" class="w-full py-4 bg-luxuryGold hover:bg-luxuryGoldLight text-luxuryCharcoal font-serif font-bold tracking-widest uppercase rounded transition shadow-xl mt-4">
+          Register Account
+        </button>
+      </form>
+
+      <p class="text-center text-xs text-gray-500 mt-6">
+        Already have a profile? <a href="login.html" class="text-luxuryGold hover:underline">Log in here</a>
+      </p>
+    </div>
+  </main>
+
+  <!-- Core Scripts -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
