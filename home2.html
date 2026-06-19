@@ -96,20 +96,6 @@
 
     <!-- Mobile Hamburger -->
     <div class="xl:hidden flex items-center space-x-4">
-      <!-- Theme Toggle Mobile -->
-      <button
-        class="theme-toggle flex items-center justify-center h-8 w-8 rounded border border-luxuryGold/30 text-luxuryGold hover:border-luxuryGold hover:bg-luxuryGold/10 transition"
-        aria-label="Toggle Theme">
-        <span class="theme-icon"></span>
-      </button>
-
-      <!-- RTL Toggle Mobile -->
-      <button
-        class="rtl-toggle flex items-center justify-center h-8 px-2.5 text-[10px] rounded border border-luxuryGold/30 text-luxuryGold font-mono hover:border-luxuryGold hover:bg-luxuryGold/10 transition"
-        aria-label="Toggle RTL">
-        <span class="rtl-label">RTL</span>
-      </button>
-
       <button id="mobile-menu-btn"  class="text-luxuryGold focus:outline-none" aria-label="Toggle Mobile Menu">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -139,6 +125,19 @@
         class="nav-link text-base font-semibold tracking-wider text-gray-300 hover:text-luxuryGold transition py-2 border-b border-white/5">Contact</a>
       <a href="signup.html"
         class="inline-block text-center px-4 py-2 rounded bg-luxuryGold text-luxuryCharcoal text-base font-semibold tracking-wider hover:bg-luxuryGoldLight transition">Signup</a>
+      
+      <!-- Mobile Menu Preferences Toggles -->
+      <div class="flex items-center justify-between pt-4 border-t border-white/5">
+        <span class="text-xs text-gray-400 font-semibold tracking-wider font-mono">PREFERENCES</span>
+        <div class="flex items-center space-x-3 rtl:space-x-reverse">
+          <button class="theme-toggle flex items-center justify-center h-9 w-9 rounded border border-luxuryGold/30 text-luxuryGold hover:border-luxuryGold hover:bg-luxuryGold/10 transition" aria-label="Toggle Theme">
+            <span class="theme-icon"></span>
+          </button>
+          <button class="rtl-toggle flex items-center justify-center h-9 px-3 text-xs rounded border border-luxuryGold/30 text-luxuryGold font-mono hover:border-luxuryGold hover:bg-luxuryGold/10 transition" aria-label="Toggle RTL">
+            <span class="rtl-label">RTL</span>
+          </button>
+        </div>
+      </div>
     </div>
   </nav>
 
@@ -199,55 +198,67 @@
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8 w-full relative scroll-animate">
 
         <!-- Step 1 -->
-        <div
-          class="flex flex-col items-center text-center p-6 glass-card rounded-2xl border border-luxuryGold/10 relative">
-          <div
-            class="h-16 w-16 rounded-full bg-luxuryGold/15 border border-luxuryGold/40 flex items-center justify-center text-xl font-serif text-luxuryGold font-bold mb-4">
-            01
+        <div class="flex flex-col glass-card rounded-2xl border border-luxuryGold/10 overflow-hidden h-full">
+          <div class="h-44 w-full overflow-hidden relative">
+            <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=400&h=250" alt="Upload Photo">
+            <span class="absolute top-3 left-3 h-8 w-8 rounded-full bg-luxuryBlack/85 border border-luxuryGold/40 flex items-center justify-center text-xs font-serif text-luxuryGold font-bold">01</span>
           </div>
-          <h3 class="text-lg md:text-xl font-serif mb-2 text-luxuryCharcoal dark:text-white">Upload Photo</h3>
-          <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
-            Provide your favorite snapshot or corporate logo directly via our luxury upload tool.
-          </p>
+          <div class="p-6 text-center flex flex-col justify-between flex-grow">
+            <div>
+              <h3 class="text-lg md:text-xl font-serif mb-2 text-luxuryCharcoal dark:text-white">Upload Photo</h3>
+              <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
+                Provide your favorite snapshot or corporate logo directly via our luxury upload tool.
+              </p>
+            </div>
+          </div>
         </div>
 
         <!-- Step 2 -->
-        <div
-          class="flex flex-col items-center text-center p-6 glass-card rounded-2xl border border-luxuryGold/10 relative">
-          <div
-            class="h-16 w-16 rounded-full bg-luxuryGold/15 border border-luxuryGold/40 flex items-center justify-center text-xl font-serif text-luxuryGold font-bold mb-4">
-            02
+        <div class="flex flex-col glass-card rounded-2xl border border-luxuryGold/10 overflow-hidden h-full">
+          <div class="h-44 w-full overflow-hidden relative">
+            <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=400&h=250" alt="Design Review">
+            <span class="absolute top-3 left-3 h-8 w-8 rounded-full bg-luxuryBlack/85 border border-luxuryGold/40 flex items-center justify-center text-xs font-serif text-luxuryGold font-bold">02</span>
           </div>
-          <h3 class="text-lg md:text-xl font-serif mb-2 text-luxuryCharcoal dark:text-white">Design Review</h3>
-          <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
-            Our expert designers build a custom 3D depth map and verify contrast levels for free.
-          </p>
+          <div class="p-6 text-center flex flex-col justify-between flex-grow">
+            <div>
+              <h3 class="text-lg md:text-xl font-serif mb-2 text-luxuryCharcoal dark:text-white">Design Review</h3>
+              <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
+                Our expert designers build a custom 3D depth map and verify contrast levels for free.
+              </p>
+            </div>
+          </div>
         </div>
 
         <!-- Step 3 -->
-        <div
-          class="flex flex-col items-center text-center p-6 glass-card rounded-2xl border border-luxuryGold/10 relative">
-          <div
-            class="h-16 w-16 rounded-full bg-luxuryGold/15 border border-luxuryGold/40 flex items-center justify-center text-xl font-serif text-luxuryGold font-bold mb-4">
-            03
+        <div class="flex flex-col glass-card rounded-2xl border border-luxuryGold/10 overflow-hidden h-full">
+          <div class="h-44 w-full overflow-hidden relative">
+            <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1563770660941-20978e870e26?auto=format&fit=crop&q=80&w=400&h=250" alt="Laser Engraving">
+            <span class="absolute top-3 left-3 h-8 w-8 rounded-full bg-luxuryBlack/85 border border-luxuryGold/40 flex items-center justify-center text-xs font-serif text-luxuryGold font-bold">03</span>
           </div>
-          <h3 class="text-lg md:text-xl font-serif mb-2 text-luxuryCharcoal dark:text-white">Laser Engraving</h3>
-          <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
-            High-precision green lasers forge thousands of points subsurface without cracking outer glass.
-          </p>
+          <div class="p-6 text-center flex flex-col justify-between flex-grow">
+            <div>
+              <h3 class="text-lg md:text-xl font-serif mb-2 text-luxuryCharcoal dark:text-white">Laser Engraving</h3>
+              <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
+                High-precision green lasers forge thousands of points subsurface without cracking outer glass.
+              </p>
+            </div>
+          </div>
         </div>
 
         <!-- Step 4 -->
-        <div
-          class="flex flex-col items-center text-center p-6 glass-card rounded-2xl border border-luxuryGold/10 relative">
-          <div
-            class="h-16 w-16 rounded-full bg-luxuryGold/15 border border-luxuryGold/40 flex items-center justify-center text-xl font-serif text-luxuryGold font-bold mb-4">
-            04
+        <div class="flex flex-col glass-card rounded-2xl border border-luxuryGold/10 overflow-hidden h-full">
+          <div class="h-44 w-full overflow-hidden relative">
+            <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&q=80&w=400&h=250" alt="Delivery">
+            <span class="absolute top-3 left-3 h-8 w-8 rounded-full bg-luxuryBlack/85 border border-luxuryGold/40 flex items-center justify-center text-xs font-serif text-luxuryGold font-bold">04</span>
           </div>
-          <h3 class="text-lg md:text-xl font-serif mb-2 text-luxuryCharcoal dark:text-white">Delivery</h3>
-          <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
-            Beautifully nestled in a satin lining luxury box, dispatched via tracked priority courier.
-          </p>
+          <div class="p-6 text-center flex flex-col justify-between flex-grow">
+            <div>
+              <h3 class="text-lg md:text-xl font-serif mb-2 text-luxuryCharcoal dark:text-white">Delivery</h3>
+              <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
+                Beautifully nestled in a satin lining luxury box, dispatched via tracked priority courier.
+              </p>
+            </div>
+          </div>
         </div>
 
       </div>
@@ -360,7 +371,7 @@
       </div>
 
       <!-- Inspiration Occasion Cards -->
-      <div class="grid grid-cols-2 md:grid-cols-5 gap-6 w-full scroll-animate">
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 w-full scroll-animate">
 
         <!-- Birthday -->
         <a href="custom.html?occasion=birthday"
@@ -371,7 +382,7 @@
                 d="M21 15.546c-.523 0-1.046.151-1.5.454a2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.701 2.701 0 00-1.5-.454M9 16v2m3-6v6m3-8v8M3 12h18M3 8h18M3 4h18" />
             </svg>
           </div>
-          <h3 class="text-base md:text-lg font-serif font-bold text-luxuryCharcoal dark:text-white">Birthday</h3>
+          <h3 class="text-sm sm:text-base font-serif font-bold text-luxuryCharcoal dark:text-white">Birthday</h3>
         </a>
 
         <!-- Wedding -->
@@ -383,7 +394,7 @@
                 d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
             </svg>
           </div>
-          <h3 class="text-base md:text-lg font-serif font-bold text-luxuryCharcoal dark:text-white">Wedding</h3>
+          <h3 class="text-sm sm:text-base font-serif font-bold text-luxuryCharcoal dark:text-white">Wedding</h3>
         </a>
 
         <!-- Corporate Event -->
@@ -395,7 +406,7 @@
                 d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
             </svg>
           </div>
-          <h3 class="text-base md:text-lg font-serif font-bold text-luxuryCharcoal dark:text-white">Corporate Event</h3>
+          <h3 class="text-sm sm:text-base font-serif font-bold text-luxuryCharcoal dark:text-white">Corporate Event</h3>
         </a>
 
         <!-- Retirement -->
@@ -407,7 +418,7 @@
                 d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m12.728 12.728l.707.707M12 8a4 4 0 100 8 4 4 0 000-8z" />
             </svg>
           </div>
-          <h3 class="text-base md:text-lg font-serif font-bold text-luxuryCharcoal dark:text-white">Retirement</h3>
+          <h3 class="text-sm sm:text-base font-serif font-bold text-luxuryCharcoal dark:text-white">Retirement</h3>
         </a>
 
         <!-- Anniversary -->
@@ -419,7 +430,7 @@
                 d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
             </svg>
           </div>
-          <h3 class="text-base md:text-lg font-serif font-bold text-luxuryCharcoal dark:text-white">Anniversary</h3>
+          <h3 class="text-sm sm:text-base font-serif font-bold text-luxuryCharcoal dark:text-white">Anniversary</h3>
         </a>
 
       </div>

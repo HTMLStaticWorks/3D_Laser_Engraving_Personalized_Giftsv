@@ -96,20 +96,6 @@
 
         <!-- Mobile Hamburger -->
     <div class="xl:hidden flex items-center space-x-4">
-      <!-- Theme Toggle Mobile -->
-      <button
-        class="theme-toggle flex items-center justify-center h-8 w-8 rounded border border-luxuryGold/30 text-luxuryGold hover:border-luxuryGold hover:bg-luxuryGold/10 transition"
-        aria-label="Toggle Theme">
-        <span class="theme-icon"></span>
-      </button>
-
-      <!-- RTL Toggle Mobile -->
-      <button
-        class="rtl-toggle flex items-center justify-center h-8 px-2.5 text-[10px] rounded border border-luxuryGold/30 text-luxuryGold font-mono hover:border-luxuryGold hover:bg-luxuryGold/10 transition"
-        aria-label="Toggle RTL">
-        <span class="rtl-label">RTL</span>
-      </button>
-
       <button id="mobile-menu-btn"  class="text-luxuryGold focus:outline-none" aria-label="Toggle Mobile Menu">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor">
@@ -140,6 +126,19 @@
                 class="nav-link text-base font-semibold tracking-wider text-gray-300 hover:text-luxuryGold transition py-2 border-b border-white/5">Contact</a>
             <a href="signup.html"
                 class="inline-block text-center px-4 py-2 rounded bg-luxuryGold text-luxuryCharcoal text-base font-semibold tracking-wider hover:bg-luxuryGoldLight transition">Signup</a>
+            
+            <!-- Mobile Menu Preferences Toggles -->
+            <div class="flex items-center justify-between pt-4 border-t border-white/5">
+                <span class="text-xs text-gray-400 font-semibold tracking-wider font-mono">PREFERENCES</span>
+                <div class="flex items-center space-x-3 rtl:space-x-reverse">
+                    <button class="theme-toggle flex items-center justify-center h-9 w-9 rounded border border-luxuryGold/30 text-luxuryGold hover:border-luxuryGold hover:bg-luxuryGold/10 transition" aria-label="Toggle Theme">
+                        <span class="theme-icon"></span>
+                    </button>
+                    <button class="rtl-toggle flex items-center justify-center h-9 px-3 text-xs rounded border border-luxuryGold/30 text-luxuryGold font-mono hover:border-luxuryGold hover:bg-luxuryGold/10 transition" aria-label="Toggle RTL">
+                        <span class="rtl-label">RTL</span>
+                    </button>
+                </div>
+            </div>
         </div>
     </nav>
 
@@ -213,7 +212,7 @@
                     </div>
 
                     <!-- Floating Glass Card (Micro showcase) -->
-                    <div class="absolute -bottom-6 -left-6 md:-left-12 glass-panel p-5 rounded-xl border border-luxuryGold/30 shadow-2xl max-w-[240px] hidden sm:block animate-bounce"
+                    <div class="absolute -bottom-6 left-4 sm:-left-6 md:-left-12 glass-panel p-5 rounded-xl border border-luxuryGold/30 shadow-2xl max-w-[240px] block animate-bounce"
                         style="animation-duration: 6s;">
                         <div class="flex items-center space-x-3 mb-2">
                             <span class="h-2 w-2 rounded-full bg-green-500 animate-ping"></span>
@@ -664,10 +663,9 @@
                     </div>
                     <div
                         class="flex items-center space-x-3 rtl:space-x-reverse border-t border-gray-200 dark:border-white/10 pt-4">
-                        <div
-                            class="h-10 w-10 rounded-full bg-luxuryGold/20 flex items-center justify-center font-bold text-luxuryGold font-serif">
-                            EM
-                        </div>
+                        <img class="h-10 w-10 rounded-full object-cover border border-luxuryGold/40"
+                            src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150&h=150"
+                            alt="Eleanor Mitchell">
                         <div>
                             <h5 class="text-sm font-semibold text-luxuryCharcoal dark:text-white">Eleanor Mitchell</h5>
                             <p class="text-[10px] text-gray-500 dark:text-gray-400">Anniversary Gift Recipient</p>
@@ -709,10 +707,9 @@
                     </div>
                     <div
                         class="flex items-center space-x-3 rtl:space-x-reverse border-t border-gray-200 dark:border-white/10 pt-4">
-                        <div
-                            class="h-10 w-10 rounded-full bg-luxuryGold/20 flex items-center justify-center font-bold text-luxuryGold font-serif">
-                            JH
-                        </div>
+                        <img class="h-10 w-10 rounded-full object-cover border border-luxuryGold/40"
+                            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=150&h=150"
+                            alt="James Harrison">
                         <div>
                             <h5 class="text-sm font-semibold text-luxuryCharcoal dark:text-white">James Harrison</h5>
                             <p class="text-[10px] text-gray-500 dark:text-gray-400">VP, Capital Partners</p>
@@ -754,10 +751,9 @@
                     </div>
                     <div
                         class="flex items-center space-x-3 rtl:space-x-reverse border-t border-gray-200 dark:border-white/10 pt-4">
-                        <div
-                            class="h-10 w-10 rounded-full bg-luxuryGold/20 flex items-center justify-center font-bold text-luxuryGold font-serif">
-                            SC
-                        </div>
+                        <img class="h-10 w-10 rounded-full object-cover border border-luxuryGold/40"
+                            src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=150&h=150"
+                            alt="Sophia Carter">
                         <div>
                             <h5 class="text-sm font-semibold text-luxuryCharcoal dark:text-white">Sophia Carter</h5>
                             <p class="text-[10px] text-gray-500 dark:text-gray-400">Pet Memorial Keepsake</p>

@@ -8,7 +8,7 @@ h1, h2, h3, h4, h5, h6, .font-serif {
 
 body {
   font-family: 'Montserrat', sans-serif;
-  transition: background-color 0.5s ease, color 0.5s ease;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 /* Glassmorphism Styles */
@@ -201,4 +201,187 @@ body {
   filter: grayscale(1) invert(0.92) contrast(0.95);
   opacity: 0.85;
 }
+
+/* Back to Top Button */
+.back-to-top {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 9999px;
+  background: rgba(13, 13, 13, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  color: #D4AF37;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  background: #D4AF37;
+  color: #0D0D0D;
+  border-color: #D4AF37;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+  transform: translateY(-3px);
+}
+
+.back-to-top:active {
+  transform: translateY(-1px);
+}
+
+/* RTL positioning */
+[dir="rtl"] .back-to-top {
+  right: auto;
+  left: 1.5rem;
+}
+
+/* Accessibility & High Contrast Improvements */
+
+/* Ensure body text has high contrast */
+body {
+  color: #111111; /* light mode text (sharper black) */
+}
+.dark body {
+  color: #F8FAFC; /* dark mode text (bright off-white) */
+}
+
+/* Headings contrast */
+h1, h2, h3, h4, h5, h6 {
+  color: #000000; /* pure black in light mode */
+}
+.dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
+  color: #FFFFFF; /* pure white in dark mode */
+}
+
+/* Improve gray text classes for light/dark modes */
+.text-gray-300 {
+  color: #555555 !important; /* Visible medium-dark gray in light mode */
+}
+.text-gray-400 {
+  color: #444444 !important; /* Visible dark gray in light mode */
+}
+.text-gray-500 {
+  color: #333333 !important; /* Visible deep gray in light mode */
+}
+.text-gray-600 {
+  color: #222222 !important; /* Near black in light mode */
+}
+
+/* Dark mode overrides (must have .dark prefix) */
+.dark .text-gray-500, .dark .dark\:text-gray-400, .dark .text-gray-400 {
+  color: #F1F5F9 !important; /* Make dark mode gray text much brighter/slate-100 */
+}
+.dark .dark\:text-gray-300, .dark .text-gray-300 {
+  color: #FFFFFF !important; /* Make dark mode secondary text pure white */
+}
+.dark .text-gray-600 {
+  color: #E2E8F0 !important;
+}
+
+
+
+/* Handle luxury gold contrast on light backgrounds */
+html:not(.dark) .text-luxuryGold {
+  color: #926F1A !important;
+}
+html:not(.dark) .border-luxuryGold {
+  border-color: #926F1A !important;
+}
+html:not(.dark) .bg-luxuryGold {
+  background-color: #926F1A !important;
+  color: #FFFFFF !important;
+}
+html:not(.dark) .hover\:bg-luxuryGold:hover {
+  background-color: #926F1A !important;
+  color: #FFFFFF !important;
+}
+html:not(.dark) .hover\:text-luxuryGold:hover {
+  color: #926F1A !important;
+}
+
+/* Ensure text and headings inside dark backgrounds/containers stay light-colored, even in light mode */
+header h1, header h2, header h3, header h4, header h5, header h6,
+footer h1, footer h2, footer h3, footer h4, footer h5, footer h6,
+.bg-luxuryBlack h1, .bg-luxuryBlack h2, .bg-luxuryBlack h3, .bg-luxuryBlack h4, .bg-luxuryBlack h5, .bg-luxuryBlack h6,
+.bg-luxuryCharcoal h1, .bg-luxuryCharcoal h2, .bg-luxuryCharcoal h3, .bg-luxuryCharcoal h4, .bg-luxuryCharcoal h5, .bg-luxuryCharcoal h6,
+header p, footer p, .bg-luxuryBlack p, .bg-luxuryCharcoal p,
+header span:not(.text-luxuryGold), footer span:not(.text-luxuryGold) {
+  color: #FFFFFF !important;
+}
+
+header p, footer p {
+  color: #CBD5E1 !important;
+}
+
+/* Restore bright gold inside dark containers in light mode and make it bolder for readability */
+header .text-luxuryGold,
+footer .text-luxuryGold,
+.bg-luxuryBlack .text-luxuryGold,
+.bg-luxuryCharcoal .text-luxuryGold,
+.text-white .text-luxuryGold {
+  color: #D4AF37 !important;
+  font-weight: 700 !important;
+}
+
+
+/* Ensure text and headings inside containers styled with text-white remain white */
+.text-white,
+.text-white h1, .text-white h2, .text-white h3, .text-white h4, .text-white h5, .text-white h6,
+.text-white p, .text-white span:not(.text-luxuryGold) {
+  color: #FFFFFF !important;
+}
+
+.text-white .text-gray-300 {
+  color: #D1D5DB !important; /* Keep light gray description text readable */
+}
+
+/* Form controls contrast styling */
+input, select, textarea {
+  color: #111111 !important;
+}
+.dark input, .dark select, .dark textarea {
+  color: #F8FAFC !important;
+}
+
+select option {
+  background-color: #FFFFFF !important;
+  color: #111111 !important;
+}
+.dark select option {
+  background-color: #1A1A1A !important;
+  color: #F8FAFC !important;
+}
+
+/* Gallery Image Uniformity */
+.gallery-img {
+  width: 100% !important;
+  height: 280px !important;
+  object-fit: cover !important;
+}
+@media (min-width: 768px) {
+  .gallery-img {
+    height: 320px !important;
+  }
+}
+.gallery-img-top {
+  object-position: top !important;
+}
+
+
 

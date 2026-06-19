@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initForms();
   highlightActiveLink();
   initQuoteTabs();
+  initBackToTop();
 });
 
 /* ==========================================================================
@@ -42,6 +43,7 @@ function initTheme() {
         localStorage.setItem('theme', 'dark');
       }
       updateThemeIcons();
+      updateNavbarBg();
     });
   });
   
@@ -110,27 +112,31 @@ function updateRtlLabels() {
    Navbar Styling & Active Highlighting
    ========================================================================== */
 function initNavbar() {
+  window.addEventListener('scroll', updateNavbarBg);
+  updateNavbarBg();
+}
+
+function updateNavbarBg() {
   const navbar = document.getElementById('navbar');
   if (!navbar) return;
   
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 20) {
-      navbar.classList.add('shadow-lg');
-      navbar.classList.add('bg-luxuryBlack/90', 'backdrop-blur-md', 'border-b', 'border-luxuryGold/10');
-      
-      // Adapt bg for light mode dynamically (using Tailwind's dark class toggle)
-      if (!document.documentElement.classList.contains('dark')) {
-        navbar.classList.remove('bg-luxuryBlack/90');
-        navbar.classList.add('bg-white/95', 'border-luxuryGold/20');
-      } else {
-        navbar.classList.remove('bg-white/95', 'border-luxuryGold/20');
-        navbar.classList.add('bg-luxuryBlack/90');
-      }
+  if (window.scrollY > 20) {
+    navbar.classList.add('shadow-lg');
+    navbar.classList.add('backdrop-blur-md', 'border-b');
+    
+    // Adapt bg for light mode dynamically (using Tailwind's dark class toggle)
+    if (!document.documentElement.classList.contains('dark')) {
+      navbar.classList.remove('bg-luxuryBlack/90', 'border-luxuryGold/10');
+      navbar.classList.add('bg-white/95', 'border-luxuryGold/20');
     } else {
-      navbar.classList.remove('shadow-lg', 'bg-luxuryBlack/90', 'bg-white/95', 'backdrop-blur-md', 'border-b', 'border-luxuryGold/10', 'border-luxuryGold/20');
+      navbar.classList.remove('bg-white/95', 'border-luxuryGold/20');
+      navbar.classList.add('bg-luxuryBlack/90', 'border-luxuryGold/10');
     }
-  });
+  } else {
+    navbar.classList.remove('shadow-lg', 'bg-luxuryBlack/90', 'bg-white/95', 'backdrop-blur-md', 'border-b', 'border-luxuryGold/10', 'border-luxuryGold/20');
+  }
 }
+
 
 function highlightActiveLink() {
   const currentPath = window.location.pathname.split('/').pop() || 'index.html';
@@ -476,6 +482,40 @@ function initQuoteTabs() {
         }
         document.body.removeChild(textArea);
       });
+    });
+  });
+}
+
+/* ==========================================================================
+   Back to Top Button
+   ========================================================================== */
+function initBackToTop() {
+  const btn = document.createElement('button');
+  btn.id = 'back-to-top';
+  btn.className = 'back-to-top';
+  btn.setAttribute('aria-label', 'Back to top');
+  
+  // Arrow Up SVG Icon
+  btn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+  </svg>`;
+  
+  document.body.appendChild(btn);
+  
+  // Scroll Listener
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      btn.classList.add('show');
+    } else {
+      btn.classList.remove('show');
+    }
+  });
+  
+  // Click Listener
+  btn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
     });
   });
 }
