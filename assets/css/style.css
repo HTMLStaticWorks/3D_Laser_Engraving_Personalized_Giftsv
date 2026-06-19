@@ -321,15 +321,45 @@ footer h1, footer h2, footer h3, footer h4, footer h5, footer h6,
 .bg-luxuryBlack h1, .bg-luxuryBlack h2, .bg-luxuryBlack h3, .bg-luxuryBlack h4, .bg-luxuryBlack h5, .bg-luxuryBlack h6,
 .bg-luxuryCharcoal h1, .bg-luxuryCharcoal h2, .bg-luxuryCharcoal h3, .bg-luxuryCharcoal h4, .bg-luxuryCharcoal h5, .bg-luxuryCharcoal h6,
 header p, footer p, .bg-luxuryBlack p, .bg-luxuryCharcoal p,
-header span:not(.text-luxuryGold), footer span:not(.text-luxuryGold) {
+header span:not(.text-luxuryGold), footer span:not(.text-luxuryGold),
+footer a:not(.text-luxuryGold) {
   color: #FFFFFF !important;
 }
 
-header p, footer p {
+header p, footer p, footer a:not(.text-luxuryGold) {
   color: #CBD5E1 !important;
 }
 
-/* Restore bright gold inside dark containers in light mode and make it bolder for readability */
+/* Ensure gray text inside dark containers remains light-colored even in light mode */
+footer .text-gray-300, header .text-gray-300, .bg-luxuryBlack .text-gray-300, .bg-luxuryCharcoal .text-gray-300 {
+  color: #CBD5E1 !important;
+}
+footer .text-gray-400, header .text-gray-400, .bg-luxuryBlack .text-gray-400, .bg-luxuryCharcoal .text-gray-400 {
+  color: #9CA3AF !important;
+}
+footer .text-gray-500, header .text-gray-500, .bg-luxuryBlack .text-gray-500, .bg-luxuryCharcoal .text-gray-500 {
+  color: #9CA3AF !important;
+}
+
+/* Hover effects for links inside dark containers */
+header a:hover,
+footer a:hover,
+.bg-luxuryBlack a:hover,
+.bg-luxuryCharcoal a:hover {
+  color: #D4AF37 !important;
+}
+
+/* Restore bright gold inside dark containers/elements in light mode and make it bolder for readability */
+html:not(.dark) header .text-luxuryGold,
+html:not(.dark) footer .text-luxuryGold,
+html:not(.dark) .bg-luxuryBlack .text-luxuryGold,
+html:not(.dark) .bg-luxuryCharcoal .text-luxuryGold,
+html:not(.dark) .text-white .text-luxuryGold,
+html:not(.dark) .glass-card .from-luxuryBlack ~ .relative .text-luxuryGold,
+html:not(.dark) [class*="bg-luxuryBlack"].text-luxuryGold,
+html:not(.dark) [class*="bg-luxuryBlack"] .text-luxuryGold,
+html:not(.dark) [class*="bg-luxuryCharcoal"].text-luxuryGold,
+html:not(.dark) [class*="bg-luxuryCharcoal"] .text-luxuryGold,
 header .text-luxuryGold,
 footer .text-luxuryGold,
 .bg-luxuryBlack .text-luxuryGold,
@@ -348,7 +378,10 @@ footer .text-luxuryGold,
 }
 
 .text-white .text-gray-300 {
-  color: #D1D5DB !important; /* Keep light gray description text readable */
+  color: #F3F4F6 !important; /* Keep light gray description text extremely readable */
+}
+.text-white .text-gray-400 {
+  color: #E5E7EB !important;
 }
 
 /* Form controls contrast styling */
