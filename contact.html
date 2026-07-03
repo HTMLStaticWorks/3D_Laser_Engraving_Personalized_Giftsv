@@ -40,18 +40,26 @@
        ========================================== -->
   <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-4 px-6 md:px-12 flex items-center justify-between">
     <!-- Logo -->
-    <a href="index.html" class="flex items-center space-x-2 text-xl font-bold tracking-widest text-luxuryGold">
-      <svg class="h-6 w-6 text-luxuryGold rtl-flip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5" />
-        <polyline points="12 2 12 22" />
-        <polyline points="12 12 22 8.5" />
-        <polyline points="12 12 2 8.5" />
+    <a href="index.html" class="flex items-center space-x-2 rtl:space-x-reverse text-xl font-bold tracking-widest text-luxuryGold">
+      <svg class="h-7 w-7 text-luxuryGold rtl-flip" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Outer Prism / Crystal structure -->
+        <path d="M12 2L21 6.5V17.5L12 22L3 17.5V6.5L12 2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+        <!-- Facet lines -->
+        <path d="M12 2V22" stroke="currentColor" stroke-width="1" stroke-dasharray="1 1"/>
+        <path d="M3 6.5L21 17.5" stroke="currentColor" stroke-width="1" stroke-linejoin="round"/>
+        <path d="M21 6.5L3 17.5" stroke="currentColor" stroke-width="1" stroke-linejoin="round"/>
+        <!-- Inner Diamond/Crystal Core -->
+        <path d="M12 7L17 12L12 17L7 12L12 7Z" fill="currentColor" fill-opacity="0.15" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+        <!-- Glowing center dot / laser engraving spark -->
+        <circle cx="12" cy="12" r="2" fill="#FFFFFF" class="animate-pulse"/>
+        <path d="M12 9V15" stroke="#FFFFFF" stroke-width="1"/>
+        <path d="M9 12h6" stroke="#FFFFFF" stroke-width="1"/>
       </svg>
       <span>AURA 3D</span>
     </a>
 
     <!-- Desktop Navigation Items (Centered) -->
-    <div class="hidden xl:flex items-center space-x-6">
+    <div class="hidden xl:flex items-center space-x-6 rtl:space-x-reverse">
       <a href="index.html" class="nav-link text-sm font-semibold tracking-wider hover:text-luxuryGold transition">Home 1</a>
       <a href="home2.html" class="nav-link text-sm font-semibold tracking-wider hover:text-luxuryGold transition">Home 2</a>
       <a href="about.html" class="nav-link text-sm font-semibold tracking-wider hover:text-luxuryGold transition">About</a>
@@ -62,7 +70,7 @@
     </div>
 
     <!-- Desktop Controls (Right-aligned) -->
-    <div class="hidden xl:flex items-center space-x-6">
+    <div class="hidden xl:flex items-center space-x-6 rtl:space-x-reverse">
       <!-- Theme Toggle -->
       <button
         class="theme-toggle flex items-center justify-center h-9 w-9 rounded border border-luxuryGold/30 text-luxuryGold hover:border-luxuryGold hover:bg-luxuryGold/10 transition"
@@ -77,6 +85,8 @@
         <span class="rtl-label">RTL</span>
       </button>
 
+      <a href="login.html"
+        class="flex items-center justify-center h-9 px-4 rounded border border-luxuryGold text-luxuryGold text-sm font-semibold tracking-wider hover:bg-luxuryGold hover:text-luxuryCharcoal transition duration-300">Login</a>
       <a href="signup.html"
         class="flex items-center justify-center h-9 px-4 rounded border border-luxuryGold text-luxuryGold text-sm font-semibold tracking-wider hover:bg-luxuryGold hover:text-luxuryCharcoal transition duration-300">Signup</a>
     </div>
@@ -99,6 +109,7 @@
       <a href="gallery.html" class="nav-link text-base font-semibold tracking-wider text-gray-300 hover:text-luxuryGold transition py-2 border-b border-white/5">Gallery</a>
       <a href="blog.html" class="nav-link text-base font-semibold tracking-wider text-gray-300 hover:text-luxuryGold transition py-2 border-b border-white/5">Blog</a>
       <a href="contact.html" class="nav-link text-base font-semibold tracking-wider text-gray-300 hover:text-luxuryGold transition py-2 border-b border-white/5">Contact</a>
+      <a href="login.html" class="inline-block text-center px-4 py-2 rounded border border-luxuryGold text-luxuryGold text-base font-semibold tracking-wider hover:bg-luxuryGold hover:text-luxuryCharcoal transition">Login</a>
       <a href="signup.html" class="inline-block text-center px-4 py-2 rounded bg-luxuryGold text-luxuryCharcoal text-base font-semibold tracking-wider hover:bg-luxuryGoldLight transition">Signup</a>
       
       <!-- Mobile Menu Preferences Toggles -->

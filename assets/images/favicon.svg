@@ -1,6 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2">
-    <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5" />
-    <polyline points="12 2 12 22" />
-    <polyline points="12 12 22 8.5" />
-    <polyline points="12 12 2 8.5" />
+    <!-- Outer Prism / Crystal structure -->
+    <path d="M12 2L21 6.5V17.5L12 22L3 17.5V6.5L12 2Z" stroke="#D4AF37" stroke-width="1.5" stroke-linejoin="round"/>
+    <!-- Facet lines -->
+    <path d="M12 2V22" stroke="#D4AF37" stroke-width="1" stroke-dasharray="1 1"/>
+    <path d="M3 6.5L21 17.5" stroke="#D4AF37" stroke-width="1" stroke-linejoin="round"/>
+    <path d="M21 6.5L3 17.5" stroke="#D4AF37" stroke-width="1" stroke-linejoin="round"/>
+    <!-- Inner Diamond/Crystal Core -->
+    <path d="M12 7L17 12L12 17L7 12L12 7Z" fill="#D4AF37" fill-opacity="0.15" stroke="#D4AF37" stroke-width="1.5" stroke-linejoin="round"/>
+    <!-- Glowing center dot / laser engraving spark -->
+    <circle cx="12" cy="12" r="2" fill="#FFFFFF"/>
+    <path d="M12 9V15" stroke="#FFFFFF" stroke-width="1"/>
+    <path d="M9 12h6" stroke="#FFFFFF" stroke-width="1"/>
 </svg>

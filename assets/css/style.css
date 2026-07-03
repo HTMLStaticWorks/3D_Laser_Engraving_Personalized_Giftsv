@@ -416,5 +416,18 @@ select option {
   object-position: top !important;
 }
 
+/* Fix CTA buttons text contrast inside headers/dark containers when hovered */
+header a.bg-luxuryGold:hover,
+footer a.bg-luxuryGold:hover,
+.bg-luxuryBlack a.bg-luxuryGold:hover,
+.bg-luxuryCharcoal a.bg-luxuryGold:hover {
+  color: #1A1A1A !important;
+}
+
+/* Fix quote card category/author labels text contrast in light mode */
+html:not(.dark) .glass-card span.text-gray-400 {
+  color: #555555 !important;
+}
+
 
 
