@@ -9,6 +9,7 @@ h1, h2, h3, h4, h5, h6, .font-serif {
 body {
   font-family: 'Montserrat', sans-serif;
   transition: background-color 0.2s ease, color 0.2s ease;
+  padding-top: 3.5rem !important; /* Reduce space below navbar */
 }
 
 /* Glassmorphism Styles */
@@ -79,9 +80,12 @@ body {
   scrollbar-width: none;
 }
 
-/* Sticky Navbar Transitions */
+/* Sticky Navbar Transitions & Padding Override */
 #navbar {
   transition: background-color 0.3s, backdrop-filter 0.3s, border-color 0.3s, box-shadow 0.3s;
+  padding-top: 0.3rem !important;
+  padding-bottom: 0.3rem !important;
+  border-bottom: 1px solid transparent;
 }
 
 /* RTL Specific Overrides for elements that need mirroring */
@@ -174,11 +178,15 @@ body {
 /* Active Link Styles */
 .nav-link {
   position: relative;
+  padding-top: 0.35rem !important;
+  padding-bottom: 0.35rem !important;
+  display: inline-flex;
+  align-items: center;
 }
 .nav-link::after {
   content: '';
   position: absolute;
-  bottom: -4px;
+  bottom: 0px;
   left: 0;
   width: 0%;
   height: 2px;
